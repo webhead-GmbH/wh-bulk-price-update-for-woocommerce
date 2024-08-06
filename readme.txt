@@ -14,6 +14,24 @@ Easily update WooCommerce product prices in bulk based on categories, tags, and 
 
 The Bulk Price Update for WooCommerce plugin allows you to efficiently manage and update prices of your WooCommerce products in bulk. You can adjust prices by percentage or fixed amounts, targeting specific categories, tags, or attributes. This streamlines the process of price adjustments, saving you time and effort.
 
+== USE OF 3RD PARTY SERVICES ==
+
+This plugin makes use of third-party services to enhance its functionality:
+
+1. **Retrieving Latest Blog Posts**
+   - **Service URL:** https://webhead.at
+   - **Purpose:** The plugin retrieves the latest blog posts from the webhead.at website to display them in the "Latest Posts" tab within the "About Us" menu.
+   - **Data Handling:** The request fetches the latest posts and caches the response for 24 hours. No user data is stored or transmitted during this process. This request is only sent when the user navigates to the "About Us" menu.
+   - **Privacy Policy:** [Webhead Privacy Policy](https://webhead.at/en/privacy/)
+
+2. **Fetching List of Other Plugins**
+   - **Service URL:** https://plugins.webhead.at
+   - **Purpose:** The plugin fetches a list of other plugins developed by webhead GmbH to display them in the "Other Plugins" tab.
+   - **Data Handling:** The request fetches the plugin list and caches the response for 24 hours. No user data is stored or transmitted during this process. This request is only sent when the user clicks on the "Other Plugins" tab.
+   - **Privacy Policy:** [Webhead Privacy Policy](https://webhead.at/en/privacy/)
+
+These third-party requests are sent only when navigating to the "About Us" menu or clicking on the "Other Plugins" tab. They do not interfere with the core functionality of the plugin and are intended solely for better introducing the company and its other plugins.
+
 == Installation ==
 
 = Automatic Installation =
