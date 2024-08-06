@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Bulk Price Update for WooCommerce
- * Plugin URI: https://wordpress.org/plugins/wh-bulk-price-update/
+ * Plugin URI: https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/
  * Description: Easily update WooCommerce product prices in bulk by percentage or fixed amounts based on categories, tags, and attributes.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Webhead
  * Author URI: https://webhead.at
  * Text Domain: wh-bulk-price-update
@@ -28,7 +28,7 @@ if( !function_exists( 'is_plugin_inactive' ) ) include_once( ABSPATH . 'wp-admin
 function wh_bulk_price_update_setup_constants()
 {
     if( !defined( 'WEBHEAD_BULK_PRICE_UPDATE_VERSION' ) )
-        define( 'WEBHEAD_BULK_PRICE_UPDATE_VERSION', '1.0.0' );
+        define( 'WEBHEAD_BULK_PRICE_UPDATE_VERSION', '1.0.1' );
 
     if( !defined( 'WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR' ) )
         define( 'WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
