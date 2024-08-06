@@ -36,4 +36,4 @@ In the search field type “Bulk Price Update,” then click “Search Plugins.�
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of WH Bulk Price Update for WooCommerce.
+Initial release of Bulk Price Update for WooCommerce.
