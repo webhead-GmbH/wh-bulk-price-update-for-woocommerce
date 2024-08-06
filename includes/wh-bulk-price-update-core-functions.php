@@ -146,6 +146,11 @@ if( !function_exists( 'wh_get_blog_posts' ) ) {
 }
 
 if( !function_exists( 'wh_get_plugins' ) ) {
+    /**
+     * This function retrieves a list of other plugins from a remote server.
+     *
+     * @return array An array containing the retrieved plugins or an empty array if unsuccessful.
+     */
     function wh_get_plugins(): array
     {
         // Check if cached blog posts are available
