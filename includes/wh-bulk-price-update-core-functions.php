@@ -89,7 +89,7 @@ if( !function_exists( 'wh_calculate_modified_price' ) ) {
 }
 
 if( !function_exists( 'wh_get_language_code' ) ) {
-    function wh_get_language_code(string $language): string
+    function wh_get_language_code(string $lang): string
     {
         // Normalize language code
         $lang = explode( '-', sanitize_text_field( $lang ) )[0];
@@ -97,12 +97,7 @@ if( !function_exists( 'wh_get_language_code' ) ) {
 
         // Validate language code
         $available_languages = ['en', 'de'];
-        $lang = $available_languages[$lang] ?? 'en';
-
-        if( $lang !== 'de' )
-            $lang = "/{$lang}";
-
-        return $lang;
+        return $available_languages[$lang] ?? 'en';
     }
 }
 
@@ -122,8 +117,13 @@ if( !function_exists( 'wh_get_blog_posts' ) ) {
 
         // Check if cached blog posts are available
         if( false === ( $posts = get_transient( WEBHEAD_BULK_PRICE_UPDATE_BLOG_POST_CACHE_KEY . "_{$lang}" ) ) ) {
+
+            $site_lang = $lang;
+            if( $site_lang !== 'de' )
+                $site_lang = "/{$site_lang}";
+
             // Construct API URL
-            $url = "https://webhead.at{$lang}/wp-json/wp/v2/posts?per_page={$count}&context=embed&_embed";
+            $url = "https://webhead.at{$site_lang}/wp-json/wp/v2/posts?per_page={$count}&context=embed&_embed";
 
             // Perform remote GET request
             $response = wp_remote_get( esc_url_raw( $url ) );
