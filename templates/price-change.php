@@ -199,7 +199,23 @@ defined( 'ABSPATH' ) || exit;
                                             <label for="categories" class="form-label d-block">
                                                 <?php esc_html_e( 'Categories to include', 'wh-bulk-price-update' ); ?>
                                             </label>
-                                            <?php echo $categories; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                                            <?php echo wp_kses(
+                                                $categories,
+                                                [
+                                                    'select' => [
+                                                        'name'        => [],
+                                                        'id'          => [],
+                                                        'class'       => [],
+                                                        'multiple'    => [],
+                                                        'tabindex'    => [],
+                                                        'aria-hidden' => [],
+                                                    ],
+                                                    'option' => [
+                                                        'class' => [],
+                                                        'value' => [],
+                                                    ],
+                                                ]
+                                            ); ?>
                                         </div> <!-- @.mb-3 -->
 
                                         <div class="mb-3">

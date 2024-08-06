@@ -68,6 +68,11 @@ class WH_Bulk_Price_Update_Ajax
         $action_type = sanitize_text_field( $_POST['action_type'] );
         $change_type = sanitize_text_field( $_POST['change_type'] );
         $price_type = sanitize_text_field( $_POST['price_type'] );
+        $apply_to = sanitize_text_field( $_POST['apply_to'] );
+        $include_products = array_map( 'intval', (array)$_POST['include_products'] );
+        $exclude_products = array_map( 'intval', (array)$_POST['exclude_products'] );
+        $categories = array_map( 'intval', (array)$_POST['categories'] );
+        $tags = array_map( 'intval', (array)$_POST['tags'] );
 
         // Set preview caption if in preview mode
         if( $is_preview )
@@ -77,7 +82,7 @@ class WH_Bulk_Price_Update_Ajax
                 $preview_block_size
             );
 
-        do_action( 'before_wh_bulk_price_update_product_price', $_POST );
+        do_action( 'before_wh_bulk_price_update_product_price' );
 
         // Loop through products in batches until there are no more or time limit is reached
         while(true) {
@@ -94,24 +99,24 @@ class WH_Bulk_Price_Update_Ajax
             ];
 
             // Apply product filtering based on user selection
-            if( $_POST['apply_to'] !== 'all' ) {
-                if( !empty( $_POST['include_products'] ) )
-                    $args['post__in'] = (array)$_POST['include_products'];
+            if( $apply_to !== 'all' ) {
+                if( !empty( $include_products ) )
+                    $args['post__in'] = $include_products;
 
-                if( !empty( $categories = $_POST['categories'] ) ) {
+                if( !empty( $categories ) ) {
                     $args['tax_query'][] = [
                         'taxonomy' => 'product_cat',
                         'field'    => 'id',
-                        'terms'    => (array)$categories,
+                        'terms'    => $categories,
                         'operator' => 'IN',
                     ];
                 }
 
-                if( !empty( $tags = $_POST['tags'] ) ) {
+                if( !empty( $tags ) ) {
                     $args['tax_query'][] = [
                         'taxonomy' => 'product_tag',
                         'field'    => 'id',
-                        'terms'    => (array)$tags,
+                        'terms'    => $tags,
                         'operator' => 'IN',
                     ];
                 }
@@ -121,14 +126,14 @@ class WH_Bulk_Price_Update_Ajax
                         $args['tax_query'][] = [
                             'taxonomy' => wc_attribute_taxonomy_name( $attr->attribute_name ),
                             'field'    => 'slug',
-                            'terms'    => (array)$attributes,
+                            'terms'    => array_map( 'sanitize_text_field', (array)$attributes ),
                             'operator' => 'IN',
                         ];
                     }
                 }
             }
 
-            $args = apply_filters( 'wh_bulk_price_update_product_price_query_args', $args, $_POST );
+            $args = apply_filters( 'wh_bulk_price_update_product_price_query_args', $args );
 
             // Execute the WP_Query to retrieve products
             $loop = new WP_Query( $args );
@@ -140,7 +145,7 @@ class WH_Bulk_Price_Update_Ajax
             // Process each product in the current batch
             foreach($loop->posts as $product_id) {
                 // Apply product exclusion if selected
-                if( $_POST['has_exclude_products'] == 1 && !empty( $_POST['exclude_products'] ) && in_array( $product_id, (array)$_POST['exclude_products'] ) )
+                if( $_POST['has_exclude_products'] == 1 && !empty( $exclude_products ) && in_array( $product_id, $exclude_products ) )
                     continue;
 
                 // Getting all product IDs (including variations for variable products)
@@ -150,7 +155,7 @@ class WH_Bulk_Price_Update_Ajax
                 if( $product->is_type( 'variable' ) )
                     $product_ids = array_merge( $product_ids, $product->get_children() );
 
-                $product_ids = apply_filters( 'wh_bulk_price_update_product_price_processed_products', $product_ids, $product, $_POST );
+                $product_ids = apply_filters( 'wh_bulk_price_update_product_price_processed_products', $product_ids, $product );
 
                 // Process each product ID (including variations)
                 foreach($product_ids as $_product_id) {
@@ -239,7 +244,7 @@ class WH_Bulk_Price_Update_Ajax
                 $updated_count
             );
 
-        do_action( 'after_wh_bulk_price_update_product_price', $_POST, $result, $updated_count );
+        do_action( 'after_wh_bulk_price_update_product_price', $result, $updated_count );
 
         // Load the products table template and return the response
         wh_load_template( 'products-table', ['products' => $result, 'caption' => $table_caption] );
@@ -261,14 +266,14 @@ class WH_Bulk_Price_Update_Ajax
         check_ajax_referer( 'save-settings', 'security' );
 
         $available_options = [
-            'block_size',
-            'preview_block_size',
-            'time_limit',
+            'block_size'         => $_POST['block_size'] ?? 1020,
+            'preview_block_size' => $_POST['preview_block_size'] ?? 20,
+            'time_limit'         => $_POST['time_limit'] ?? -1,
         ];
 
-        foreach($_POST as $key => $value)
-            if( in_array( $key, $available_options ) )
-                update_option( "wh_bulk_price_update_{$key}", sanitize_text_field( $value ) );
+        foreach($available_options as $key => $value) {
+            update_option( "wh_bulk_price_update_{$key}", sanitize_text_field( $value ) );
+        }
 
         wp_send_json_success();
     }
@@ -287,7 +292,8 @@ class WH_Bulk_Price_Update_Ajax
     {
         check_ajax_referer( 'get-blog-posts', 'security' );
 
-        $lang = $_POST['lang'] ?? 'en';
+        // Sanitize input
+        $lang = sanitize_text_field( $_POST['lang'] ?? 'en' );
         $lang = explode( '-', $lang );
         $lang = $lang[0];
         $lang = explode( '_', $lang );
