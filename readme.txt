@@ -1,4 +1,4 @@
-=== WH Bulk Price Update for WooCommerce ===
+=== Bulk Price Update for WooCommerce ===
 Contributors: webheadgmbh, mohammad425
 Tags: woocommerce, bulk price update, price adjustment, product management
 Requires at least: 6.0
