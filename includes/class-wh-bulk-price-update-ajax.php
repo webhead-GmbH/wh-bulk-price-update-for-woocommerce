@@ -26,8 +26,9 @@ class WH_Bulk_Price_Update_Ajax
             'get_plugins',
         ];
 
-        foreach($ajax_events as $ajax_event)
-            add_action( 'wp_ajax_wh_' . $ajax_event, [__CLASS__, $ajax_event] );
+        foreach($ajax_events as $ajax_event) {
+            add_action( "wp_ajax_webhead_bulk_price_update_{$ajax_event}", [__CLASS__, $ajax_event] );
+        }
     }
 
     /**
@@ -197,21 +198,21 @@ class WH_Bulk_Price_Update_Ajax
                             $result[$_product_id]['original_prices']['regular_price'] = wc_price( $_product->get_regular_price() );
                             $result[$_product_id]['original_prices']['sale_price'] = wc_price( $_product->get_sale_price() );
 
-                            $result[$_product_id]['change_prices']['price'] = wc_price( wh_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
-                            $result[$_product_id]['change_prices']['regular_price'] = wc_price( wh_calculate_modified_price( $_product->get_regular_price(), $price_value, $action_type, $change_type ) );
-                            $result[$_product_id]['change_prices']['sale_price'] = wc_price( wh_calculate_modified_price( $_product->get_sale_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['regular_price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_regular_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['sale_price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_sale_price(), $price_value, $action_type, $change_type ) );
                             break;
                         case 'regular_price':
                             $result[$_product_id]['original_prices']['regular_price'] = wc_price( $_product->get_regular_price() );
 
-                            $result[$_product_id]['change_prices']['price'] = wc_price( wh_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
-                            $result[$_product_id]['change_prices']['regular_price'] = wc_price( wh_calculate_modified_price( $_product->get_regular_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['regular_price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_regular_price(), $price_value, $action_type, $change_type ) );
                             break;
                         case 'sale_price':
                             $result[$_product_id]['original_prices']['sale_price'] = wc_price( $_product->get_sale_price() );
 
-                            $result[$_product_id]['change_prices']['price'] = wc_price( wh_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
-                            $result[$_product_id]['change_prices']['sale_price'] = wc_price( wh_calculate_modified_price( $_product->get_sale_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_price(), $price_value, $action_type, $change_type ) );
+                            $result[$_product_id]['change_prices']['sale_price'] = wc_price( webhead_bulk_price_update_calculate_modified_price( $_product->get_sale_price(), $price_value, $action_type, $change_type ) );
                             break;
                     }
 
@@ -247,7 +248,7 @@ class WH_Bulk_Price_Update_Ajax
         do_action( 'after_wh_bulk_price_update_product_price', $result, $updated_count );
 
         // Load the products table template and return the response
-        wh_load_template( 'products-table', ['products' => $result, 'caption' => $table_caption] );
+        webhead_bulk_price_update_load_template( 'products-table', ['products' => $result, 'caption' => $table_caption] );
         wp_die();
     }
 
@@ -299,7 +300,7 @@ class WH_Bulk_Price_Update_Ajax
         $lang = explode( '_', $lang );
         $lang = $lang[0];
 
-        wh_load_template( 'posts-loop', ['posts' => wh_get_blog_posts( $lang )] );
+        webhead_bulk_price_update_load_template( 'posts-loop', ['posts' => webhead_bulk_price_update_get_blog_posts( $lang )] );
         wp_die();
     }
 
@@ -307,7 +308,7 @@ class WH_Bulk_Price_Update_Ajax
     {
         check_ajax_referer( 'get-plugins', 'security' );
 
-        wh_load_template( 'plugins-loop', ['plugins' => wh_get_plugins()] );
+        webhead_bulk_price_update_load_template( 'plugins-loop', ['plugins' => webhead_bulk_price_update_get_plugins()] );
         wp_die();
     }
 }

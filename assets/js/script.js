@@ -168,7 +168,7 @@ jQuery(document).ready(function ($) {
         }
 
         let _data = {
-            action: 'wh_update_product_price',
+            action: 'webhead_bulk_price_update_update_product_price',
             security: wh_script_params.update_product_price_nonce,
             is_preview: is_preview ? 1 : 0
         }
@@ -223,7 +223,7 @@ jQuery(document).ready(function ($) {
 
         let _data = new FormData(this);
         _data.append('security', wh_script_params.save_settings_nonce);
-        _data.append('action', 'wh_save_settings');
+        _data.append('action', 'webhead_bulk_price_update_save_settings');
 
         $.ajax({
             url: wh_script_params.ajax_url,
@@ -267,7 +267,7 @@ jQuery(document).ready(function ($) {
             type: "post",
             cache: true,
             data: {
-                action: 'wh_get_blog_posts',
+                action: 'webhead_bulk_price_update_get_blog_posts',
                 security: wh_script_params.get_blog_posts_nonce,
                 lang: $("html").attr('lang')
             },
@@ -283,7 +283,7 @@ jQuery(document).ready(function ($) {
                     type: "post",
                     cache: true,
                     data: {
-                        action: 'wh_get_plugins',
+                        action: 'webhead_bulk_price_update_get_plugins',
                         security: wh_script_params.get_plugins_nonce
                     },
                     beforeSend: function () {

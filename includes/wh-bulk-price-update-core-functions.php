@@ -9,7 +9,7 @@
 # Prevent direct file access
 defined( 'ABSPATH' ) || exit;
 
-if( !function_exists( 'wh_get_template' ) ) {
+if( !function_exists( 'webhead_bulk_price_update_get_template' ) ) {
     /**
      * This function retrieves the path to a template file within the plugin directory.
      *
@@ -18,13 +18,15 @@ if( !function_exists( 'wh_get_template' ) ) {
      *
      * @return string The full path to the template file.
      */
-    function wh_get_template(string $template_name, string $ext = 'php'): string
+    function webhead_bulk_price_update_get_template(string $template_name, string $ext = 'php'): string
     {
+        $template_name = sanitize_file_name( $template_name );
+        $ext = sanitize_text_field( strtolower( $ext ) );
         return WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . "templates/{$template_name}.{$ext}";
     }
 }
 
-if( !function_exists( 'wh_load_template' ) ) {
+if( !function_exists( 'webhead_bulk_price_update_load_template' ) ) {
     /**
      * This function loads a template file and extracts variables from an array.
      *
@@ -33,14 +35,14 @@ if( !function_exists( 'wh_load_template' ) ) {
      *
      * @return void
      */
-    function wh_load_template(string $template_name, array $params = []): void
+    function webhead_bulk_price_update_load_template(string $template_name, array $params = []): void
     {
         extract( $params );
-        require wh_get_template( $template_name );
+        require webhead_bulk_price_update_get_template( $template_name );
     }
 }
 
-if( !function_exists( 'wh_calculate_modified_price' ) ) {
+if( !function_exists( 'webhead_bulk_price_update_calculate_modified_price' ) ) {
     /**
      * This function calculates a modified price based on user input.
      *
@@ -51,7 +53,7 @@ if( !function_exists( 'wh_calculate_modified_price' ) ) {
      *
      * @return float The calculated modified price.
      */
-    function wh_calculate_modified_price($current_price, $price_value, string $action_type, string $change_type): float
+    function webhead_bulk_price_update_calculate_modified_price($current_price, $price_value, string $action_type, string $change_type): float
     {
         $current_price = floatval( $current_price );
         $price_value = floatval( $price_value );
@@ -88,8 +90,8 @@ if( !function_exists( 'wh_calculate_modified_price' ) ) {
     }
 }
 
-if( !function_exists( 'wh_get_language_code' ) ) {
-    function wh_get_language_code(string $lang): string
+if( !function_exists( 'webhead_bulk_price_update_get_language_code' ) ) {
+    function webhead_bulk_price_update_get_language_code(string $lang): string
     {
         // Normalize language code
         $lang = explode( '-', sanitize_text_field( $lang ) )[0];
@@ -101,7 +103,7 @@ if( !function_exists( 'wh_get_language_code' ) ) {
     }
 }
 
-if( !function_exists( 'wh_get_blog_posts' ) ) {
+if( !function_exists( 'webhead_bulk_price_update_get_blog_posts' ) ) {
     /**
      * This function retrieves recent blog posts from a remote server in a specified language.
      *
@@ -111,9 +113,9 @@ if( !function_exists( 'wh_get_blog_posts' ) ) {
      * @return array An array containing the retrieved blog posts or an empty array if unsuccessful.
      * @link   https://developer.wordpress.org/rest-api/reference/posts/#list-posts
      */
-    function wh_get_blog_posts(string $lang = 'en', int $count = 3): array
+    function webhead_bulk_price_update_get_blog_posts(string $lang = 'en', int $count = 3): array
     {
-        $lang = wh_get_language_code( $lang );
+        $lang = webhead_bulk_price_update_get_language_code( $lang );
 
         // Check if cached blog posts are available
         if( false === ( $posts = get_transient( WEBHEAD_BULK_PRICE_UPDATE_BLOG_POST_CACHE_KEY . "_{$lang}" ) ) ) {
@@ -145,13 +147,13 @@ if( !function_exists( 'wh_get_blog_posts' ) ) {
     }
 }
 
-if( !function_exists( 'wh_get_plugins' ) ) {
+if( !function_exists( 'webhead_bulk_price_update_get_plugins' ) ) {
     /**
      * This function retrieves a list of other plugins from a remote server.
      *
      * @return array An array containing the retrieved plugins or an empty array if unsuccessful.
      */
-    function wh_get_plugins(): array
+    function webhead_bulk_price_update_get_plugins(): array
     {
         // Check if cached blog posts are available
         if( false === ( $plugins = get_transient( WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY ) ) ) {

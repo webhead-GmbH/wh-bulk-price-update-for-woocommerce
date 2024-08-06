@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 
 if( !function_exists( 'is_plugin_inactive' ) ) include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-function wh_bulk_price_update_setup_constants()
+function webhead_bulk_price_update_setup_constants()
 {
     if( !defined( 'WEBHEAD_BULK_PRICE_UPDATE_VERSION' ) )
         define( 'WEBHEAD_BULK_PRICE_UPDATE_VERSION', '1.0.1' );
@@ -53,10 +53,10 @@ function wh_bulk_price_update_setup_constants()
 }
 
 /** Initialize the plugin. */
-function wh_bulk_price_update_init_plugin(): void
+function webhead_bulk_price_update_init_plugin(): void
 {
     // Setup plugin constants
-    wh_bulk_price_update_setup_constants();
+    webhead_bulk_price_update_setup_constants();
 
     require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-bulk-price-update.php';
 
@@ -73,6 +73,6 @@ if( is_plugin_inactive( 'woocommerce/woocommerce.php' ) ) {
     } );
 } else {
     do_action( 'before_wh_bulk_price_update_run' );
-    add_action( 'plugins_loaded', 'wh_bulk_price_update_init_plugin' );
+    add_action( 'plugins_loaded', 'webhead_bulk_price_update_init_plugin' );
     do_action( 'after_wh_bulk_price_update_run' );
 }

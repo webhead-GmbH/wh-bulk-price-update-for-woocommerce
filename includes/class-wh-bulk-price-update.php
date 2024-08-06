@@ -73,7 +73,7 @@ class WH_Bulk_Price_Update
         $data['preview_count'] = get_option( 'wh_bulk_price_update_preview_block_size', 20 );
         $data['time_limit'] = get_option( 'wh_bulk_price_update_time_limit', -1 );
 
-        wh_load_template( 'price-change', $data );
+        webhead_bulk_price_update_load_template( 'price-change', $data );
     }
 
     public function woo_compatibility()
