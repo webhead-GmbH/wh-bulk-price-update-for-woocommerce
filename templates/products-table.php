@@ -10,15 +10,15 @@ defined( 'ABSPATH' ) || exit;
 <div class="table-responsive">
     <table class="table table-bordered table-striped align-middle caption-top wh-preview-price-table">
         <caption>
-            <h2 class="m-0"><?php esc_html_e( 'Results', 'wh-bulk-price-update' ); ?></h2>
+            <h2 class="m-0"><?php esc_html_e( 'Results', 'wh-bulk-price-update-for-woocommerce' ); ?></h2>
             <?php echo esc_html( $caption ); ?>
         </caption>
         <thead class="table-dark">
         <tr>
-            <th scope="col"><?php esc_html_e( 'Product', 'wh-bulk-price-update' ); ?></th>
-            <th scope="col"><?php esc_html_e( 'Categories', 'wh-bulk-price-update' ); ?></th>
-            <th scope="col"><?php esc_html_e( 'Tags', 'wh-bulk-price-update' ); ?></th>
-            <th scope="col"><?php esc_html_e( 'Modified Details', 'wh-bulk-price-update' ); ?></th>
+            <th scope="col"><?php esc_html_e( 'Product', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
+            <th scope="col"><?php esc_html_e( 'Categories', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
+            <th scope="col"><?php esc_html_e( 'Tags', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
+            <th scope="col"><?php esc_html_e( 'Modified Details', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
         </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -36,9 +36,9 @@ defined( 'ABSPATH' ) || exit;
                         <table class="table table-sm align-middle wh-price-details-table m-0">
                             <thead>
                             <tr>
-                                <th><?php esc_html_e( 'Price Type', 'wh-bulk-price-update' ); ?></th>
-                                <th><?php esc_html_e( 'Original Price', 'wh-bulk-price-update' ); ?></th>
-                                <th><?php esc_html_e( 'Modified Price', 'wh-bulk-price-update' ); ?></th>
+                                <th><?php esc_html_e( 'Price Type', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
+                                <th><?php esc_html_e( 'Original Price', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
+                                <th><?php esc_html_e( 'Modified Price', 'wh-bulk-price-update-for-woocommerce' ); ?></th>
                             </tr>
                             </thead>
                             <tbody>

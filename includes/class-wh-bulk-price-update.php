@@ -19,17 +19,17 @@ class WH_Bulk_Price_Update
 
     public function load_textdomain(): void
     {
-        load_plugin_textdomain( 'wh-bulk-price-update', false, WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_SLUG . '/languages/' );
+        load_plugin_textdomain( 'wh-bulk-price-update-for-woocommerce', false, WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_SLUG . '/languages/' );
     }
 
     public function add_price_change_page()
     {
         add_submenu_page(
             'edit.php?post_type=product',
-            __( 'Bulk Price Update', 'wh-bulk-price-update' ),
-            __( 'Bulk Price Update', 'wh-bulk-price-update' ),
+            __( 'Bulk Price Update', 'wh-bulk-price-update-for-woocommerce' ),
+            __( 'Bulk Price Update', 'wh-bulk-price-update-for-woocommerce' ),
             'manage_options',
-            'wh-bulk-price-update',
+            'wh-bulk-price-update-for-woocommerce',
             [$this, 'render_price_change_page']
         );
     }
@@ -39,14 +39,14 @@ class WH_Bulk_Price_Update
         wp_enqueue_style( 'woocommerce_admin_styles' );
         wp_enqueue_style( 'wh-bootstrap-css' );
         wp_enqueue_style( 'wh-fontawesome-css' );
-        wp_enqueue_style( 'wh-bulk-price-update-css' );
+        wp_enqueue_style( 'wh-bulk-price-update-for-woocommerce' );
 
         wp_enqueue_script( 'wh-popper' );
         wp_enqueue_script( 'wh-bootstrap' );
         wp_enqueue_script( 'select2' );
         wp_enqueue_script( 'wc-enhanced-select' );
         wp_enqueue_script( 'accounting' );
-        wp_enqueue_script( 'wh-script' );
+        wp_enqueue_script( 'wh-bulk-price-update-for-woocommerce' );
 
         $data['categories'] = wp_dropdown_categories( [
             'taxonomy'      => 'product_cat',
@@ -91,19 +91,19 @@ class WH_Bulk_Price_Update
     {
         wp_register_style( 'wh-bootstrap-css', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/css/bootstrap.min.css', [], '5.3.3' );
         wp_register_style( 'wh-fontawesome-css', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/css/all.min.css', [], '6.5.2' );
-        wp_register_style( 'wh-bulk-price-update-css', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/css/style.css', ['wh-bootstrap-css', 'woocommerce_admin_styles'], WEBHEAD_BULK_PRICE_UPDATE_VERSION );
+        wp_register_style( 'wh-bulk-price-update-for-woocommerce', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/css/style.css', ['wh-bootstrap-css', 'woocommerce_admin_styles'], WEBHEAD_BULK_PRICE_UPDATE_VERSION );
     }
 
     public function admin_scripts()
     {
         wp_register_script( 'wh-popper', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/js/popper.min.js', [], '2.11.8', true );
         wp_register_script( 'wh-bootstrap', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/js/bootstrap.min.js', ['wh-popper', 'jquery'], '5.3.3', true );
-        wp_register_script( 'wh-script', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/js/script.js', ['jquery', 'select2', 'wh-bootstrap', 'accounting'], WEBHEAD_BULK_PRICE_UPDATE_VERSION, true );
+        wp_register_script( 'wh-bulk-price-update-for-woocommerce', WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_URL . 'assets/js/script.js', ['jquery', 'select2', 'wh-bootstrap', 'accounting'], WEBHEAD_BULK_PRICE_UPDATE_VERSION, true );
         wp_localize_script(
-            'wh-script',
+            'wh-bulk-price-update-for-woocommerce',
             'wh_script_params',
             [
-                'i18n_select_an_option'        => _x( 'Select an option', 'enhanced select', 'wh-bulk-price-update' ),
+                'i18n_select_an_option'        => _x( 'Select an option', 'enhanced select', 'wh-bulk-price-update-for-woocommerce' ),
                 'ajax_url'                     => admin_url( 'admin-ajax.php' ),
                 'update_product_price_nonce'   => wp_create_nonce( 'update-product-price' ),
                 'save_settings_nonce'          => wp_create_nonce( 'save-settings' ),

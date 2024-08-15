@@ -79,7 +79,7 @@ class WH_Bulk_Price_Update_Ajax
         if( $is_preview )
             $table_caption = sprintf(
             /* translators: %d: Preview block size. */
-                __( 'A maximum of %d products are shown in the preview mode', 'wh-bulk-price-update' ),
+                esc_html__( 'A maximum of %d products are shown in the preview mode', 'wh-bulk-price-update-for-woocommerce' ),
                 $preview_block_size
             );
 
@@ -241,7 +241,7 @@ class WH_Bulk_Price_Update_Ajax
         if( !$is_preview )
             $table_caption = sprintf(
             /* translators: %d: Updated products count. */
-                __( 'The price of %d products has been successfully updated', 'wh-bulk-price-update' ),
+                esc_html__( 'The price of %d products has been successfully updated', 'wh-bulk-price-update-for-woocommerce' ),
                 $updated_count
             );
 

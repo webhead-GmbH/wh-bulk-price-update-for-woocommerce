@@ -6,7 +6,7 @@
  * Version: 1.0.2
  * Author: webhead GmbH
  * Author URI: https://webhead.at
- * Text Domain: wh-bulk-price-update
+ * Text Domain: wh-bulk-price-update-for-woocommerce
  * Domain Path: /languages
  * Requires Plugins: woocommerce
  * WC requires at least: 7.1.0

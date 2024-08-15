@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
                     </div>
                     <a href="<?php echo esc_url( $post['link'] ); ?>" target="_blank" rel="nofollow"
                        class="btn btn-outline-success">
-                        <?php esc_html_e( 'Read more', 'wh-bulk-price-update' ); ?>
+                        <?php esc_html_e( 'Read more', 'wh-bulk-price-update-for-woocommerce' ); ?>
                     </a>
                 </div> <!-- @.card-body -->
             </div> <!-- @.card -->

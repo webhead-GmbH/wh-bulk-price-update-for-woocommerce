@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
                     <?php if( !empty( $plugin['learn_more_url'] ) ): ?>
                         <a href="<?php echo esc_url( $plugin['learn_more_url'] ); ?>" target="_blank" rel="nofollow"
                            class="text-decoration-none">
-                            <?php esc_html_e( 'Learn More', 'wh-bulk-price-update' ); ?>
+                            <?php esc_html_e( 'Learn More', 'wh-bulk-price-update-for-woocommerce' ); ?>
                         </a>
                     <?php endif; ?>
                     <a href="<?php echo esc_url( $plugin['action_url'] ); ?>" class="btn btn-outline-success"
