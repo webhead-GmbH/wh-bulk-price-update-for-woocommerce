@@ -123,13 +123,17 @@ class WH_Bulk_Price_Update_Ajax
                 }
 
                 foreach(wc_get_attribute_taxonomies() as $attr) {
-                    if( !empty( $attributes = $_POST[wc_attribute_taxonomy_name( $attr->attribute_name )] ) ) {
-                        $args['tax_query'][] = [
-                            'taxonomy' => wc_attribute_taxonomy_name( $attr->attribute_name ),
-                            'field'    => 'slug',
-                            'terms'    => array_map( 'sanitize_text_field', (array)$attributes ),
-                            'operator' => 'IN',
-                        ];
+                    $attr_key = wc_attribute_taxonomy_name( $attr->attribute_name );
+                    if( isset( $_POST[$attr_key] ) ) {
+                        $attributes = array_map( 'sanitize_text_field', (array)$_POST[$attr_key] );
+                        if( !empty( $attributes ) ) {
+                            $args['tax_query'][] = [
+                                'taxonomy' => wc_attribute_taxonomy_name( $attr->attribute_name ),
+                                'field'    => 'slug',
+                                'terms'    => array_map( 'sanitize_text_field', $attributes ),
+                                'operator' => 'IN',
+                            ];
+                        }
                     }
                 }
             }
@@ -267,13 +271,13 @@ class WH_Bulk_Price_Update_Ajax
         check_ajax_referer( 'save-settings', 'security' );
 
         $available_options = [
-            'block_size'         => $_POST['block_size'] ?? 1020,
-            'preview_block_size' => $_POST['preview_block_size'] ?? 20,
-            'time_limit'         => $_POST['time_limit'] ?? -1,
+            'block_size'         => isset( $_POST['block_size'] ) ? intval( $_POST['block_size'] ) : 1020,
+            'preview_block_size' => isset( $_POST['preview_block_size'] ) ? intval( $_POST['preview_block_size'] ) : 20,
+            'time_limit'         => isset( $_POST['time_limit'] ) ? intval( $_POST['time_limit'] ) : -1,
         ];
 
         foreach($available_options as $key => $value) {
-            update_option( "wh_bulk_price_update_{$key}", sanitize_text_field( $value ) );
+            update_option( "wh_bulk_price_update_{$key}", $value );
         }
 
         wp_send_json_success();
