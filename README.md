@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-    <a href="https://wordpress.org/plugins/wh-bulk-price-update/"><img src="https://img.shields.io/wordpress/plugin/v/wh-bulk-price-update" alt="WordPress Plugin Version"></a>
-    <a href="https://wordpress.org/plugins/wh-bulk-price-update/"><img src="https://img.shields.io/wordpress/plugin/required-php/wh-bulk-price-update" alt="WordPress Plugin Required PHP Version"></a>
-    <a href="https://wordpress.org/plugins/wh-bulk-price-update/"><img src="https://img.shields.io/wordpress/plugin/tested/wh-bulk-price-update" alt="WordPress Plugin: Tested WP Version"></a>
-    <a href="https://wordpress.org/plugins/wh-bulk-price-update/"><img src="https://img.shields.io/wordpress/plugin/stars/wh-bulk-price-update" alt="WordPress Plugin Rating"></a>
+    <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/v/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin Version"></a>
+    <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/required-php/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin Required PHP Version"></a>
+    <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/tested/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin: Tested WP Version"></a>
+    <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/stars/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin Rating"></a>
 </p>
 
