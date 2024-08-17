@@ -169,13 +169,17 @@ class WH_Bulk_Price_Update_Ajax
 
                     // Check for attribute-based product exclusion
                     foreach(wc_get_attribute_taxonomies() as $attr) {
-                        if( $_product->is_type( 'variation' ) && !empty( $attributes = $_POST[wc_attribute_taxonomy_name( $attr->attribute_name )] ) ) {
-                            if(
-                                !isset( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )] )
-                                || ( !empty( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )] ) && !in_array( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )], $attributes ) )
-                            ) {
-                                $_product_id = 0;
-                                break;
+                        $attr_key = wc_attribute_taxonomy_name( $attr->attribute_name );
+                        if( isset( $_POST[$attr_key] ) ) {
+                            $attributes = array_map( 'sanitize_text_field', (array)$_POST[$attr_key] );
+                            if( $_product->is_type( 'variation' ) && !empty( $attributes ) ) {
+                                if(
+                                    !isset( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )] )
+                                    || ( !empty( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )] ) && !in_array( $_product_attrs[wc_attribute_taxonomy_name( $attr->attribute_name )], $attributes ) )
+                                ) {
+                                    $_product_id = 0;
+                                    break;
+                                }
                             }
                         }
                     }
