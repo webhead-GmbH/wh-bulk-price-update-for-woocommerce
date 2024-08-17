@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Bulk Price Update for WooCommerce
- * Plugin URI: https://github.com/webhead-GmbH/wh-bulk-price-update
+ * Plugin URI: https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce
  * Description: Easily update WooCommerce product prices in bulk by percentage or fixed amounts based on categories, tags, and attributes.
  * Version: 1.0.4
  * Author: webhead GmbH
