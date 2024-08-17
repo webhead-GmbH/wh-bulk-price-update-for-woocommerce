@@ -25,7 +25,7 @@ In the search field type “Bulk Price Update For WooCommerce” then click “S
 
 ### Manual Installation
 
-1. Download latest version of plugin from [GitHub Releases](https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce/releases/latest/download/wh-bulk-price-update-for-woocommerce.zip) OR [WordPress.org](https://img.shields.io/wordpress/plugin/stars/wh-bulk-price-update-for-woocommerce)
+1. Download latest version of plugin from [GitHub Releases](https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce/releases/latest/download/wh-bulk-price-update-for-woocommerce.zip) OR [WordPress.org](https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce)
 2. Upload the `wh-bulk-price-update-for-woocommerce` folder to the `/wp-content/plugins/` directory.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Navigate to `Products > Bulk Price Update` to start updating prices in bulk.
