@@ -8,11 +8,25 @@ Stable tag: 1.0.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Easily update WooCommerce product prices in bulk based on categories, tags, and attributes.
+Easily update WooCommerce product prices in bulk based on various criteria such as categories, tags, attributes, or specific products.
 
 == Description ==
 
-The Bulk Price Update for WooCommerce plugin allows you to efficiently manage and update prices of your WooCommerce products in bulk. You can adjust prices by percentage or fixed amounts, targeting specific categories, tags, or attributes. This streamlines the process of price adjustments, saving you time and effort.
+**Bulk Price Update for WooCommerce** is a powerful yet easy-to-use plugin that allows you to manage and update product prices in your WooCommerce store efficiently. With this plugin, you can make bulk price adjustments based on a wide range of criteria, helping you to streamline your pricing strategies without the need for tedious manual updates.
+
+### Key Features:
+- **🔧 Flexible Price Adjustments:** Increase, decrease, multiply, divide, or set prices directly using either a percentage or a fixed amount.
+- **🎯 Targeted Updates:** Apply price changes to all products, specific categories, tags, or even individual products.
+- **⚙️ Selective Price Modification:** Choose to modify regular prices, sale prices, or both.
+- **🔍 Advanced Filtering:** Exclude specific products to exclude from price updates.
+- **🏷️ Attribute-Based Updates:** Modify prices based on product attributes like color, size, etc.
+- **👀 Live Preview:** View a preview of the price changes before applying them to your store.
+- **🚀 Batch Processing:** Adjust settings like batch size and preview count for optimized performance.
+- **💯 No Pro Version:** All features are fully accessible for free; no pro version or additional charges.
+
+This plugin is designed to save you time and effort by providing a comprehensive set of tools to manage your product prices efficiently.
+
+👉 Rate us on [WordPress](https://wordpress.org/support/plugin/wh-bulk-price-update-for-woocommerce/reviews/#new-post)
 
 == USE OF 3RD PARTY SERVICES ==
 
@@ -20,7 +34,7 @@ This plugin makes use of third-party services to enhance its functionality:
 
 1. **Retrieving Latest Blog Posts**
    - **Service URL:** https://webhead.at
-   - **Purpose:** The plugin retrieves the latest blog posts from the webhead.at website to display them in the "Latest Posts" tab within the "About Us" menu.
+   - **Purpose:** The plugin retrieves the latest blog posts from the webhead.at the website to display them in the "Latest Posts" tab within the "About Us" menu.
    - **Data Handling:** The request fetches the latest posts and caches the response for 24 hours. No user data is stored or transmitted during this process. This request is only sent when the user navigates to the "About Us" menu.
    - **Privacy Policy:** [Webhead Privacy Policy](https://webhead.at/en/privacy/)
 
@@ -36,13 +50,13 @@ These third-party requests are sent only when navigating to the "About Us" menu 
 
 = Automatic Installation =
 
-Automatic installation is the easiest option -- WordPress will handle the file transfer, and you won’t need to leave your web browser. To do an automatic install, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
+Automatic installation is the easiest option -- WordPress will handle the file transfer, and you won’t need to leave your web browser. To do an automatic install, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New”
 
-In the search field type “Bulk Price Update” then click “Search Plugins.” Once you’ve found us,  you can view details about it such as the point release, rating, and description. Most importantly of course, you can install it by! Click “Install Now,” and WordPress will take it from there.
+In the search field type “WH Bulk Price Update For WooCommerce” then click “Search Plugins” Once you’ve found us,  you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by clicking “Install Now” and WordPress will take it from there.
 
 = Manual Installation =
 
-1. Upload the `wh-bulk-price-update` folder to the `/wp-content/plugins/` directory.
+1. Upload the `wh-bulk-price-update-for-woocommerce` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to `Products > Bulk Price Update` to start updating prices in bulk.
 
