@@ -43,8 +43,14 @@
     --bs-card-border-radius: 20px;
 }
 
+.wh-nav-pills {
+    contain: content;
+}
+
 .wh-dashboard .wh-settings-sidebar {
-    position: fixed;
+    position: sticky;
+    top: 45px;
+    left: 15px;
 }
 
 .wh-logo {
@@ -240,7 +246,7 @@
 }
 
 .wh-setting-header.fixed {
-    position: fixed;
+    position: sticky;
     top: 0;
     padding-top: 20px;
     background-color: white;
