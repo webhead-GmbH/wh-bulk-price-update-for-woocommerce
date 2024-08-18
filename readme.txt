@@ -86,10 +86,21 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release.
+= 1.0.5 =
+* Minor styling adjustments for a smoother user experience on the dashboard
 
-== Upgrade Notice ==
+= 1.0.4 =
+* Tested up new versions of WordPress and WooCommerce
+* Security improvement
+
+= 1.0.3 =
+* Improved preview functionality before applying changes.
+
+= 1.0.2 =
+* Tested up new versions of WordPress and WooCommerce
+
+= 1.0.1 =
+* Bug fixes and minor improvements.
 
 = 1.0.0 =
-Initial release of Bulk Price Update for WooCommerce.
+* Initial release of Bulk Price Update for WooCommerce.
