@@ -60,6 +60,30 @@ In the search field type “WH Bulk Price Update For WooCommerce” then click �
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to `Products > Bulk Price Update` to start updating prices in bulk.
 
+== Frequently Asked Questions ==
+
+= How can I preview price changes before applying them? =
+You can preview the price changes by clicking on the “Preview Prices” button. This will show you the list of products and the expected changes before you finalize them.
+
+= Can I exclude certain products from the price update? =
+Yes, you can exclude specific products.
+
+= Is there a limit on the number of products that can be updated at once? =
+There is no hard limit, but for performance reasons, the plugin allows you to adjust the batch size and preview count in the settings.
+
+= Can I update only sale prices or regular prices? =
+Yes, you can update only regular prices, sale prices, or both.
+
+= Does this plugin have a pro version? =
+No, all features of this plugin are fully accessible for free. There is no pro version or any hidden costs.
+
+== Screenshots ==
+
+1. Main Dashboard
+2. Specific Products And Categories Options
+3. Preview Changes
+4. Settings
+
 == Changelog ==
 
 = 1.0.0 =
