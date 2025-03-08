@@ -2,9 +2,9 @@
 Contributors: webheadgmbh, mohammad425
 Tags: woocommerce, bulk price update, price adjustment, product management
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,23 +28,11 @@ This plugin is designed to save you time and effort by providing a comprehensive
 
 👉 Rate us on [WordPress](https://wordpress.org/support/plugin/wh-bulk-price-update-for-woocommerce/reviews/#new-post)
 
+💻 Contribute or report issues on [GitHub](https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce)
+
 == USE OF 3RD PARTY SERVICES ==
 
-This plugin makes use of third-party services to enhance its functionality:
-
-1. **Retrieving Latest Blog Posts**
-   - **Service URL:** https://webhead.at
-   - **Purpose:** The plugin retrieves the latest blog posts from the webhead.at the website to display them in the "Latest Posts" tab within the "About Us" menu.
-   - **Data Handling:** The request fetches the latest posts and caches the response for 24 hours. No user data is stored or transmitted during this process. This request is only sent when the user navigates to the "About Us" menu.
-   - **Privacy Policy:** [Webhead Privacy Policy](https://webhead.at/en/privacy/)
-
-2. **Fetching List of Other Plugins**
-   - **Service URL:** https://plugins.webhead.at
-   - **Purpose:** The plugin fetches a list of other plugins developed by webhead GmbH to display them in the "Other Plugins" tab.
-   - **Data Handling:** The request fetches the plugin list and caches the response for 24 hours. No user data is stored or transmitted during this process. This request is only sent when the user clicks on the "Other Plugins" tab.
-   - **Privacy Policy:** [Webhead Privacy Policy](https://webhead.at/en/privacy/)
-
-These third-party requests are sent only when navigating to the "About Us" menu or clicking on the "Other Plugins" tab. They do not interfere with the core functionality of the plugin and are intended solely for better introducing the company and its other plugins.
+This plugin uses third-party services to enhance functionality. It retrieves the latest blog posts from [webhead.at](https://webhead.at) for the "Latest Posts" tab and fetches a list of other plugins from [plugins.webhead.at](https://plugins.webhead.at) for the "Other Plugins" tab. Both requests cache data for 24 hours, do not store or transmit user data, and are only triggered when accessing the respective tabs. For more details, see the [Webhead Privacy Policy](https://webhead.at/en/privacy/).
 
 == Installation ==
 
@@ -85,6 +73,9 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 4. Settings
 
 == Changelog ==
+
+= 1.0.6 =
+* Tested with WordPress 6.7 and WooCommerce 9.7
 
 = 1.0.5 =
 * Minor styling adjustments for a smoother user experience on the dashboard
