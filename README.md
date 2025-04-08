@@ -32,4 +32,4 @@ In the search field type “Bulk Price Update For WooCommerce” then click “S
 
 ## About
 
-This plugin is maintained by [Webhead](https://webhead.at). We build powerful digital solutions using WordPress, WooCommerce, and more.
+This plugin is maintained by [webhead](https://webhead.at). We build powerful digital solutions using WordPress, WooCommerce, and more.
