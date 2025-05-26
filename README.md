@@ -13,6 +13,7 @@
     <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/required-php/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin Required PHP Version"></a>
     <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/tested/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin: Tested WP Version"></a>
     <a href="https://wordpress.org/plugins/wh-bulk-price-update-for-woocommerce/"><img src="https://img.shields.io/wordpress/plugin/stars/wh-bulk-price-update-for-woocommerce" alt="WordPress Plugin Rating"></a>
+    <a href="https://deepwiki.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
 </p>
 
 ## Installation
