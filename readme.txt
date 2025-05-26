@@ -4,7 +4,7 @@ Tags: woocommerce, bulk price update, price adjustment, product management
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -73,6 +73,10 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 4. Settings
 
 == Changelog ==
+
+= 1.0.7 =
+* Fix: Price calculation and empty sale price handling ([GitHub issue #1](https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce/issues/1))
+* Tested with WordPress 6.8 and WooCommerce 9.8
 
 = 1.0.6 =
 * Tested with WordPress 6.7 and WooCommerce 9.7
