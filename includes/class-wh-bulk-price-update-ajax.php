@@ -226,8 +226,14 @@ class WH_Bulk_Price_Update_Ajax
 
                     // Apply price changes to products (if not a preview)
                     if( !$is_preview ) {
-                        foreach($result[$_product_id]['change_prices'] as $key => $value)
-                            update_post_meta( $_product_id, "_{$key}", $value );
+                        foreach($result[$_product_id]['change_prices'] as $key => $value) {
+                            $price = static::extract_price_from_html( $value );
+                            if( $price <= 0 && $key === 'sale_price' ) {
+                                $price = '';
+                            }
+
+                            update_post_meta( $_product_id, "_{$key}", $price );
+                        }
 
                         $updated_count += 1;
                     }
@@ -318,6 +324,43 @@ class WH_Bulk_Price_Update_Ajax
 
         webhead_bulk_price_update_load_template( 'plugins-loop', ['plugins' => webhead_bulk_price_update_get_plugins()] );
         wp_die();
+    }
+
+    /**
+     * Extract numeric price from WooCommerce formatted price HTML string
+     *
+     * @param string $priceHtml WooCommerce formatted price string
+     *
+     * @return float Extracted numeric price
+     * @sicne 1.0.7
+     */
+    protected static function extract_price_from_html(string $priceHtml): float
+    {
+        // Strip HTML tags
+        $text = wp_strip_all_tags( $priceHtml );
+
+        // Decode HTML entities (e.g. &#36; → $)
+        $charset = get_option( 'blog_charset', 'UTF-8' );
+        $text = html_entity_decode( $text, ENT_QUOTES, $charset );
+
+        // Get locale-specific separators
+        $decimalSeparator = wc_get_price_decimal_separator();
+        $thousandSeparator = wc_get_price_thousand_separator();
+
+        // Remove a thousand separator if defined
+        if( $thousandSeparator !== '' ) {
+            $text = str_replace( $thousandSeparator, '', $text );
+        }
+
+        // Normalize decimal separator to dot
+        if( $decimalSeparator !== '.' ) {
+            $text = str_replace( $decimalSeparator, '.', $text );
+        }
+
+        // Remove any remaining non-numeric characters except dot
+        $numeric = preg_replace( '/[^0-9.]/', '', $text );
+
+        return (float)$numeric;
     }
 }
 
