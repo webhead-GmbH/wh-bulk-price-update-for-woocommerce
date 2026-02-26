@@ -96,7 +96,7 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 
 = 2.0.0 =
 * Added Scheduled Rules feature for automated rule-based price updates.
-* Added Custom formula for price action.
+* Added Custom formula for price action ([GitHub issue #2](https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce/issues/2)).
 * Tested with WordPress 6.9 and WooCommerce 10.5.
 
 = 1.0.7 =
