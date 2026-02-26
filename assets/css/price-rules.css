@@ -1,0 +1,343 @@
+/* ==========================================================================
+   Scheduled Price Rules Styles
+   ========================================================================== */
+
+.wh-rule-status-toggle {
+    margin-bottom: 0;
+    min-height: auto;
+}
+
+.wh-rule-type-badge {
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 0.4em 0.6em;
+}
+
+.wh-schedule-label {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.wh-rules-table td {
+    vertical-align: middle;
+}
+
+/* Rule Form Steps */
+.wh-rule-step {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 1.25rem;
+    background-color: transparent;
+}
+
+.wh-step-header {
+    display: none;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.wh-step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--wh-brand-color, #134B3D);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 0.75rem;
+}
+
+.wh-step-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--wh-brand-color, #134B3D);
+}
+
+.wh-label-help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    color: #6c757d;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: help;
+    margin-left: 5px;
+}
+
+/* Schedule Hours Setup */
+.wh-schedule-hour-row {
+    max-width: 250px;
+}
+
+.wh-rule-settings-panel {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+#wh-rule-form-modal .modal-dialog {
+    max-width: min(1080px, calc(100vw - 64px));
+}
+
+#wh-rule-form-modal .modal-body {
+    overflow-x: hidden;
+}
+
+.wh-step-navigation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.wh-step-indicator {
+    border: 1px solid #d0d7de;
+    border-radius: 0.5rem;
+    padding: 0.75rem 0.9rem;
+    text-align: left;
+    background: #fff;
+    color: #1f2328;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.wh-step-indicator span {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #dee2e6;
+    font-weight: 600;
+}
+
+.wh-step-indicator.active {
+    border-color: #319b80;
+    background: #eaf8f3;
+    color: #1f5f4c;
+}
+
+.wh-step-indicator strong {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.wh-step-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.wh-step-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.wh-preview-section {
+    border: 1px solid #d8e1e8;
+    border-radius: 0.5rem;
+    background: #fff;
+    overflow: hidden;
+}
+
+.wh-preview-section-header {
+    padding: 0.85rem 1rem;
+    background: #f4faf8;
+    border-bottom: 1px solid #d8e1e8;
+}
+
+.wh-preview-section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1f5f4c;
+}
+
+.wh-preview-section-subtitle {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.wh-preview-section-body {
+    padding: 0.75rem 1rem 1rem;
+    overflow-x: auto;
+}
+
+.wh-preview-section-body .wh-preview-table {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+}
+
+.wh-preview-section-body .wh-preview-table th,
+.wh-preview-section-body .wh-preview-table td {
+    vertical-align: middle;
+}
+
+.wh-preview-section-body .wh-preview-table td:nth-child(4) {
+    min-width: 280px;
+}
+
+.wh-preview-product-link {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wh-preview-product-link:hover,
+.wh-preview-product-link:focus {
+    text-decoration: underline;
+}
+
+.wh-preview-price-field {
+    font-size: 0.8rem;
+}
+
+.wh-preview-modified-details {
+    min-width: 360px;
+}
+
+.wh-preview-table .wh-price-details-table th {
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.wh-preview-table .wh-price-details-table td {
+    padding: 0.3rem 0.35rem;
+}
+
+.wh-preview-actions-col,
+.wh-preview-actions-cell {
+    width: 64px;
+    min-width: 64px;
+    text-align: center;
+}
+
+.wh-preview-table .wh-preview-icon-btn.btn.btn-sm {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1 !important;
+    border-radius: 0.3rem;
+}
+
+.wh-preview-table .wh-preview-icon-btn i {
+    font-size: 0.72rem;
+    line-height: 1;
+}
+
+.wh-preview-section-body .alert {
+    margin-bottom: 0;
+}
+
+/* Execution logs modal */
+#wh-rule-logs-modal .modal-dialog {
+    max-width: min(1320px, calc(100vw - 48px));
+}
+
+.wh-logs-filter-form {
+    padding: 0.85rem;
+    border: 1px solid #d8e1e8;
+    border-radius: 0.5rem;
+    background-color: #f8fbfc;
+}
+
+.wh-logs-filter-form .form-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #485b68;
+}
+
+.wh-logs-filter-form .select2-container {
+    width: 100% !important;
+}
+
+.wh-rule-logs-table td:nth-child(4) {
+    min-width: 280px;
+}
+
+.wh-rule-logs-table td:last-child {
+    min-width: 165px;
+}
+
+.wh-rule-logs-pagination .page-link {
+    min-width: 2rem;
+    text-align: center;
+}
+
+/* Product filters layout fixes */
+#wh-rule-step-3 .form-select,
+#wh-rule-step-3 .wh-select2,
+#wh-rule-step-3 .wc-product-search,
+#wh-rule-step-3 .wh-ajax-select2 {
+    width: 100%;
+}
+
+#wh-rule-step-3 .card {
+    width: 100%;
+}
+
+#wh-rule-step-3 .card .card-body {
+    padding: 1rem;
+}
+
+#wh-rule-step-3 .select2-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+#wh-rule-step-3 .select2-selection--multiple {
+    min-height: 38px;
+}
+
+/* Select2 overrides for modals */
+.modal-open .select2-container {
+    z-index: 1060;
+}
+
+@media (max-width: 991px) {
+    .wh-step-navigation {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 782px) {
+    #wh-rule-form-modal .modal-dialog {
+        max-width: calc(100vw - 24px);
+        margin: 0.75rem auto;
+    }
+
+    #wh-rule-logs-modal .modal-dialog {
+        max-width: calc(100vw - 20px);
+        margin: 0.5rem auto;
+    }
+
+    .wh-step-navigation {
+        grid-template-columns: 1fr;
+    }
+}

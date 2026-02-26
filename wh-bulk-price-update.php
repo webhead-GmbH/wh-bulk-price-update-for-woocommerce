@@ -48,8 +48,11 @@ function webhead_bulk_price_update_setup_constants()
     if( !defined( 'WEBHEAD_BULK_PRICE_UPDATE_BLOG_POST_CACHE_KEY' ) )
         define( 'WEBHEAD_BULK_PRICE_UPDATE_BLOG_POST_CACHE_KEY', 'wh_blog_posts' );
 
-    if( !defined( 'WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY' ) )
-        define( 'WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY', 'wh_plugins' );
+    if (!defined('WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY'))
+        define('WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY', 'wh_plugins');
+
+    if (!defined('WEBHEAD_BULK_PRICE_UPDATE_DB_VERSION'))
+        define('WEBHEAD_BULK_PRICE_UPDATE_DB_VERSION', '1.0.0');
 }
 
 /** Initialize the plugin. */
@@ -76,3 +79,55 @@ if( is_plugin_inactive( 'woocommerce/woocommerce.php' ) ) {
     add_action( 'plugins_loaded', 'webhead_bulk_price_update_init_plugin' );
     do_action( 'after_wh_bulk_price_update_run' );
 }
+
+/** Check if DB needs to be upgraded/created on plugin update. */
+function webhead_bulk_price_update_check_version()
+{
+    webhead_bulk_price_update_setup_constants();
+
+    $installed_ver = get_option('wh_bulk_price_update_db_version');
+
+    if ($installed_ver !== WEBHEAD_BULK_PRICE_UPDATE_DB_VERSION) {
+        require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/wh-bulk-price-update-core-functions.php';
+        require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-db.php';
+        require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-log-db.php';
+        require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-executor.php';
+        require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-scheduler.php';
+
+        WH_Price_Rule_DB::create_table();
+        WH_Price_Rule_Log_DB::create_table();
+        WH_Price_Rule_Scheduler::reschedule_all();
+
+        update_option('wh_bulk_price_update_db_version', WEBHEAD_BULK_PRICE_UPDATE_DB_VERSION);
+    }
+}
+
+/** Create database tables on plugin activation. */
+register_activation_hook(__FILE__, function () {
+    webhead_bulk_price_update_setup_constants();
+
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/wh-bulk-price-update-core-functions.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-db.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-log-db.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-executor.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-scheduler.php';
+
+    WH_Price_Rule_DB::create_table();
+    WH_Price_Rule_Log_DB::create_table();
+    WH_Price_Rule_Scheduler::reschedule_all();
+
+    update_option('wh_bulk_price_update_db_version', WEBHEAD_BULK_PRICE_UPDATE_DB_VERSION);
+});
+
+/** Clean up scheduled events on plugin deactivation. */
+register_deactivation_hook(__FILE__, function () {
+    webhead_bulk_price_update_setup_constants();
+
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/wh-bulk-price-update-core-functions.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-db.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-log-db.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-executor.php';
+    require_once WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR . 'includes/class-wh-price-rule-scheduler.php';
+
+    WH_Price_Rule_Scheduler::unschedule_all();
+});
