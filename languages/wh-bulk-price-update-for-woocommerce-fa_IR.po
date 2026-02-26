@@ -1,0 +1,1068 @@
+# Copyright (C) 2026 webhead GmbH
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bulk Price Update for WooCommerce 1.0.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wh-bulk-price-update-for-woocommerce\n"
+"POT-Creation-Date: 2026-02-24T07:31:16+00:00\n"
+"PO-Revision-Date: 2026-02-24 11:22\n"
+"Last-Translator: webhead GmbH <info@webhead.at>\n"
+"Language-Team: Persian\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: wh-bulk-price-update-for-woocommerce\n"
+"X-Generator: Manual translation\n"
+
+#. Plugin Name of the plugin
+#: wh-bulk-price-update.php
+msgid "Bulk Price Update for WooCommerce"
+msgstr "بروزرسانی گروهی قیمت برای ووکامرس"
+
+#. Plugin URI of the plugin
+#: wh-bulk-price-update.php
+msgid "https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce"
+msgstr "https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce"
+
+#. Description of the plugin
+#: wh-bulk-price-update.php
+msgid ""
+"Easily update WooCommerce product prices in bulk by percentage or fixed "
+"amounts based on categories, tags, and attributes."
+msgstr ""
+"قیمت محصولات ووکامرس را به‌صورت گروهی، بر اساس درصد یا مبلغ ثابت و با توجه "
+"به دسته‌بندی‌ها، برچسب‌ها و ویژگی‌ها به‌سادگی به‌روزرسانی کنید."
+
+#. Author of the plugin
+#: wh-bulk-price-update.php
+msgid "webhead GmbH"
+msgstr "webhead GmbH"
+
+#. Author URI of the plugin
+#: wh-bulk-price-update.php
+msgid "https://webhead.at"
+msgstr "https://webhead.at"
+
+#. translators: %d: Preview block size.
+#: includes/class-wh-bulk-price-update-ajax.php:92
+#, php-format
+msgid "A maximum of %d products are shown in the preview mode"
+msgstr "در حالت پیش‌نمایش حداکثر %d محصول نمایش داده می‌شود."
+
+#. translators: %d: Updated products count.
+#: includes/class-wh-bulk-price-update-ajax.php:268
+#, php-format
+msgid "The price of %d products has been successfully updated"
+msgstr "قیمت %d محصول با موفقیت به‌روزرسانی شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:355
+#: includes/class-wh-bulk-price-update-ajax.php:423
+#: includes/class-wh-bulk-price-update-ajax.php:458
+#: includes/class-wh-bulk-price-update-ajax.php:501
+#: includes/class-wh-bulk-price-update-ajax.php:534
+#: includes/class-wh-bulk-price-update-ajax.php:588
+#: includes/class-wh-bulk-price-update-ajax.php:614
+#: includes/class-wh-bulk-price-update-ajax.php:1137
+#: includes/class-wh-bulk-price-update-ajax.php:1197
+msgid "Permission denied."
+msgstr "دسترسی مجاز نیست."
+
+#: includes/class-wh-bulk-price-update-ajax.php:371
+msgid "Rule name is required."
+msgstr "نام قانون الزامی است."
+
+#: includes/class-wh-bulk-price-update-ajax.php:387
+msgid "Rule updated successfully."
+msgstr "قانون با موفقیت به‌روزرسانی شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:391
+msgid "Failed to update rule."
+msgstr "به‌روزرسانی قانون ناموفق بود."
+
+#: includes/class-wh-bulk-price-update-ajax.php:404
+msgid "Rule created successfully."
+msgstr "قانون با موفقیت ایجاد شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:408
+msgid "Failed to create rule."
+msgstr "ایجاد قانون ناموفق بود."
+
+#: includes/class-wh-bulk-price-update-ajax.php:429
+#: includes/class-wh-bulk-price-update-ajax.php:540
+#: includes/class-wh-bulk-price-update-ajax.php:593
+msgid "Invalid rule ID."
+msgstr "شناسه قانون نامعتبر است."
+
+#: includes/class-wh-bulk-price-update-ajax.php:442
+msgid "Rule deleted successfully."
+msgstr "قانون با موفقیت حذف شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:444
+msgid "Failed to delete rule."
+msgstr "حذف قانون ناموفق بود."
+
+#: includes/class-wh-bulk-price-update-ajax.php:465
+#: includes/class-wh-bulk-price-update-ajax.php:508
+#: includes/class-wh-bulk-price-update-ajax.php:545
+#: includes/class-wh-bulk-price-update-ajax.php:598
+msgid "Rule not found."
+msgstr "قانون یافت نشد."
+
+#. translators: %s: New status
+#: includes/class-wh-bulk-price-update-ajax.php:481
+#, php-format
+msgid "Rule status changed to %s."
+msgstr "وضعیت قانون به %s تغییر کرد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:487
+msgid "Failed to toggle rule."
+msgstr "تغییر وضعیت قانون ناموفق بود."
+
+#. translators: 1: Processed count, 2: Adjusted count
+#: includes/class-wh-bulk-price-update-ajax.php:516
+#, php-format
+msgid "Rule executed. %1$d products processed, %2$d adjusted."
+msgstr "قانون اجرا شد. %1$d محصول پردازش شد، %2$d مورد تنظیم شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:603
+msgid "Failed to clear logs."
+msgstr "پاک‌سازی لاگ‌ها ناموفق بود."
+
+#: includes/class-wh-bulk-price-update-ajax.php:606
+msgid "Execution logs cleared."
+msgstr "لاگ‌های اجرا پاک شدند."
+
+#: includes/class-wh-bulk-price-update-ajax.php:747
+#: includes/class-wh-bulk-price-update-ajax.php:1074
+#: templates/price-rule-logs.php:177
+msgid "Uncategorized"
+msgstr "بدون دسته‌بندی"
+
+#: includes/class-wh-bulk-price-update-ajax.php:763
+#: templates/price-rule-form.php:405
+msgid "Regular Price"
+msgstr "قیمت عادی"
+
+#: includes/class-wh-bulk-price-update-ajax.php:764
+#: templates/price-rule-form.php:404 templates/price-rule-preview.php:84
+msgid "Sale Price"
+msgstr "قیمت فروش ویژه"
+
+#: includes/class-wh-bulk-price-update-ajax.php:765
+msgid "Active Price"
+msgstr "قیمت فعال"
+
+#: includes/class-wh-bulk-price-update-ajax.php:775
+msgid "Price"
+msgstr "قیمت"
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:821
+#, php-format
+msgid "Sale removed; required margin is %s%%."
+msgstr "قیمت فروش ویژه حذف شد؛ حاشیه سود لازم %s%% است."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:829
+#, php-format
+msgid "Sale raised for %s%% margin."
+msgstr "قیمت فروش ویژه برای حاشیه سود %s%% افزایش یافت."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:837
+#, php-format
+msgid "Regular raised for %s%% margin; current sale will be removed."
+msgstr ""
+"قیمت عادی برای حاشیه سود %s%% افزایش یافت؛ قیمت فروش ویژه فعلی حذف می‌شود."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:844
+#, php-format
+msgid "Regular raised for %s%% margin."
+msgstr "قیمت عادی برای حاشیه سود %s%% افزایش یافت."
+
+#. translators: %s: max discount percent
+#: includes/class-wh-bulk-price-update-ajax.php:854
+#, php-format
+msgid "Discount capped at %s%%."
+msgstr "تخفیف به %s%% محدود شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:859
+msgid "Discount exceeds rule cap."
+msgstr "تخفیف از سقف قانون بیشتر است."
+
+#: includes/class-wh-bulk-price-update-ajax.php:867
+msgid "Sale removed by rule action."
+msgstr "قیمت فروش ویژه توسط اکشن قانون حذف شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:871
+msgid "Regular change will remove current sale."
+msgstr "تغییر قیمت عادی باعث حذف قیمت فروش ویژه فعلی می‌شود."
+
+#. translators: 1: action label, 2: value
+#: includes/class-wh-bulk-price-update-ajax.php:882
+#, php-format
+msgid "%1$s by %2$s."
+msgstr "%1$s به میزان %2$s."
+
+#: includes/class-wh-bulk-price-update-ajax.php:888
+msgid "Rule adjustment applied."
+msgstr "تنظیم قانون اعمال شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:892
+msgid "Sale removed by rule."
+msgstr "قیمت فروش ویژه توسط قانون حذف شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:896
+msgid "Current sale will be removed."
+msgstr "قیمت فروش ویژه فعلی حذف خواهد شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:899
+msgid "Price will be updated by this rule."
+msgstr "قیمت توسط این قانون به‌روزرسانی خواهد شد."
+
+#: includes/class-wh-bulk-price-update-ajax.php:912
+msgid "Increase"
+msgstr "افزایش"
+
+#: includes/class-wh-bulk-price-update-ajax.php:913
+msgid "Decrease"
+msgstr "کاهش"
+
+#: includes/class-wh-bulk-price-update-ajax.php:914
+msgid "Multiply"
+msgstr "ضرب"
+
+#: includes/class-wh-bulk-price-update-ajax.php:915
+msgid "Divide"
+msgstr "تقسیم"
+
+#: includes/class-wh-bulk-price-update-ajax.php:916
+msgid "Set"
+msgstr "تنظیم"
+
+#: includes/class-wh-bulk-price-update-ajax.php:919
+msgid "Adjust"
+msgstr "تعدیل"
+
+#: includes/class-wh-bulk-price-update.php:31
+#: includes/class-wh-bulk-price-update.php:32
+msgid "Bulk Price Update"
+msgstr "بروزرسانی گروهی قیمت"
+
+#: includes/class-wh-bulk-price-update.php:144
+msgctxt "enhanced select"
+msgid "Select an option"
+msgstr "یک گزینه انتخاب کنید"
+
+#: includes/class-wh-bulk-price-update.php:145
+msgid "Are you sure you want to delete this rule?"
+msgstr "آیا از حذف این قانون مطمئن هستید؟"
+
+#: includes/class-wh-bulk-price-update.php:146
+msgid "Are you sure you want to clear all execution logs for this rule?"
+msgstr "آیا مطمئن هستید که می‌خواهید همه لاگ‌های اجرای این قانون را پاک کنید؟"
+
+#: includes/class-wh-bulk-price-update.php:147
+msgid "Running..."
+msgstr "در حال اجرا..."
+
+#: includes/class-wh-bulk-price-update.php:148 templates/price-change.php:351
+#: templates/price-rule-form.php:470
+msgid "Saving..."
+msgstr "در حال ذخیره..."
+
+#: includes/class-wh-bulk-price-update.php:149
+msgid "Clearing..."
+msgstr "در حال پاک‌سازی..."
+
+#: includes/class-wh-bulk-price-update.php:150 templates/price-rules.php:194
+msgid "Loading logs..."
+msgstr "در حال بارگذاری لاگ‌ها..."
+
+#: includes/class-wh-bulk-price-update.php:151
+msgid "Excluded"
+msgstr "مستثنی‌شده"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Old regular price
+#: includes/class-wh-price-rule-executor.php:315
+#, php-format
+msgid ""
+"Regular price adjusted. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s"
+msgstr ""
+"قیمت عادی تنظیم شد. COG: %1$s، حاشیه سود: %2$s%%، حداقل: %3$s، قبلی: %4$s"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Current sale price
+#: includes/class-wh-price-rule-executor.php:338
+#, php-format
+msgid ""
+"Sale price removed. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s (exceeds"
+" regular price)"
+msgstr ""
+"قیمت فروش ویژه حذف شد. COG: %1$s، حاشیه سود: %2$s%%، حداقل: %3$s، قبلی: %4$s"
+" (از قیمت عادی بیشتر است)"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Old sale price, 5: New
+#. sale price
+#: includes/class-wh-price-rule-executor.php:355
+#, php-format
+msgid "Sale price adjusted. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s"
+msgstr ""
+"قیمت فروش ویژه تنظیم شد. COG: %1$s، حاشیه سود: %2$s%%، حداقل: %3$s، قبلی: "
+"%4$s"
+
+#. translators: 1: Current discount %, 2: Max discount %, 3: Old sale price,
+#. 4: New sale price
+#: includes/class-wh-price-rule-executor.php:412
+#, php-format
+msgid "Discount reduced from %1$s%% to %2$s%%. Sale price: %3$s → %4$s"
+msgstr "تخفیف از %1$s%% به %2$s%% کاهش یافت. قیمت فروش ویژه: %3$s → %4$s"
+
+#. translators: 1: Action type, 2: Price value, 3: Change type, 4: Old price,
+#. 5: New price
+#: includes/class-wh-price-rule-executor.php:488
+#, php-format
+msgid "Price %1$s by %2$s (%3$s). %4$s → %5$s"
+msgstr "قیمت %1$s به میزان %2$s (%3$s). %4$s → %5$s"
+
+#: includes/class-wh-price-rule-executor.php:685
+msgid "Margin Check"
+msgstr "بررسی حاشیه سود"
+
+#: includes/class-wh-price-rule-executor.php:686
+#: templates/price-rule-form.php:379
+msgid "Maximum Discount Percentage"
+msgstr "حداکثر درصد تخفیف"
+
+#: includes/class-wh-price-rule-executor.php:687
+msgid "Price Adjustment"
+msgstr "تنظیم قیمت"
+
+#: includes/class-wh-price-rule-scheduler.php:46
+#: includes/class-wh-price-rule-scheduler.php:300
+msgid "Every 2 Hours"
+msgstr "هر 2 ساعت"
+
+#: includes/class-wh-price-rule-scheduler.php:53
+#: includes/class-wh-price-rule-scheduler.php:301
+msgid "Every 4 Hours"
+msgstr "هر 4 ساعت"
+
+#: includes/class-wh-price-rule-scheduler.php:60
+#: includes/class-wh-price-rule-scheduler.php:302
+msgid "Every 6 Hours"
+msgstr "هر 6 ساعت"
+
+#: includes/class-wh-price-rule-scheduler.php:299
+msgid "Every Hour"
+msgstr "هر ساعت"
+
+#: includes/class-wh-price-rule-scheduler.php:303
+msgid "Twice Daily"
+msgstr "روزی دو بار"
+
+#: includes/class-wh-price-rule-scheduler.php:304
+msgid "Once Daily"
+msgstr "روزی یک بار"
+
+#: includes/class-wh-price-rule-scheduler.php:305
+msgid "Once Weekly"
+msgstr "هفته‌ای یک بار"
+
+#: includes/class-wh-price-rule-scheduler.php:306
+msgid "Custom Times"
+msgstr "زمان‌های سفارشی"
+
+#: templates/plugins-loop.php:36
+msgid "Learn More"
+msgstr "بیشتر بدانید"
+
+#: templates/posts-loop.php:30
+msgid "Read more"
+msgstr "ادامه مطلب"
+
+#: templates/price-change.php:38 templates/price-change.php:110
+msgid "Update prices"
+msgstr "بروزرسانی قیمت‌ها"
+
+#: templates/price-change.php:41
+msgid "Bulk update product prices"
+msgstr "بروزرسانی گروهی قیمت محصولات"
+
+#: templates/price-change.php:54 templates/price-rules.php:21
+msgid "Scheduled Rules"
+msgstr "قوانین زمان‌بندی‌شده"
+
+#: templates/price-change.php:57
+msgid "Automated price adjustments"
+msgstr "تنظیم خودکار قیمت‌ها"
+
+#: templates/price-change.php:70 templates/price-change.php:340
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: templates/price-change.php:73
+msgid "All general settings"
+msgstr "همه تنظیمات عمومی"
+
+#: templates/price-change.php:86 templates/price-change.php:409
+msgid "About us"
+msgstr "درباره ما"
+
+#: templates/price-change.php:89
+msgid "Our story and other plugins"
+msgstr "داستان ما و سایر افزونه‌ها"
+
+#: templates/price-change.php:116 templates/price-change.php:119
+msgid "Price type to modify"
+msgstr "نوع قیمت برای تغییر"
+
+#: templates/price-change.php:121
+msgid "Regular and sale prices"
+msgstr "قیمت عادی و قیمت فروش ویژه"
+
+#: templates/price-change.php:124
+msgid "Regular price only"
+msgstr "فقط قیمت عادی"
+
+#: templates/price-change.php:127
+msgid "Sale price only"
+msgstr "فقط قیمت فروش ویژه"
+
+#: templates/price-change.php:133
+msgid "Price action"
+msgstr "عملیات قیمت"
+
+#: templates/price-change.php:137
+msgid "Action type to modify"
+msgstr "نوع عملیات برای تغییر"
+
+#: templates/price-change.php:139 templates/price-rule-form.php:415
+msgid "Increase (+)"
+msgstr "افزایش (+)"
+
+#: templates/price-change.php:142 templates/price-rule-form.php:416
+msgid "Decrease (-)"
+msgstr "کاهش (-)"
+
+#: templates/price-change.php:145 templates/price-rule-form.php:417
+msgid "Multiply (*)"
+msgstr "ضرب (*)"
+
+#: templates/price-change.php:148
+msgid "Divide  (/)"
+msgstr "تقسیم (/)"
+
+#: templates/price-change.php:151 templates/price-rule-form.php:419
+msgid "Direct price"
+msgstr "قیمت مستقیم"
+
+#: templates/price-change.php:159
+msgid "Change type to modify"
+msgstr "نوع تغییر برای اعمال"
+
+#: templates/price-change.php:161 templates/price-rule-form.php:423
+msgid "Percentage (%)"
+msgstr "درصد (%)"
+
+#: templates/price-change.php:164 templates/price-rule-form.php:424
+msgid "Fixed"
+msgstr "ثابت"
+
+#: templates/price-change.php:169
+msgid "Select this if you want to set all products prices to same value."
+msgstr ""
+"این گزینه را انتخاب کنید اگر می‌خواهید قیمت همه محصولات روی یک مقدار یکسان "
+"تنظیم شود."
+
+#: templates/price-change.php:172
+msgid "Example"
+msgstr "مثال"
+
+#: templates/price-change.php:174 templates/price-rule-logs.php:184
+#: templates/price-rule-preview.php:66 templates/products-table.php:40
+msgid "Original Price"
+msgstr "قیمت اولیه"
+
+#: templates/price-change.php:183 templates/price-rule-logs.php:185
+#: templates/price-rule-preview.php:67 templates/products-table.php:41
+msgid "Modified Price"
+msgstr "قیمت پس از تغییر"
+
+#: templates/price-change.php:194 templates/price-change.php:197
+msgid "Apply to"
+msgstr "اعمال روی"
+
+#: templates/price-change.php:199
+msgid "All products"
+msgstr "همه محصولات"
+
+#: templates/price-change.php:202
+msgid "Specific products and categories"
+msgstr "محصولات و دسته‌بندی‌های مشخص"
+
+#: templates/price-change.php:211
+msgid "Products to include"
+msgstr "محصولات شامل"
+
+#: templates/price-change.php:216 templates/price-change.php:273
+#: templates/price-rule-form.php:270 templates/price-rule-form.php:279
+msgid "Search for a product&hellip;"
+msgstr "جستجوی یک محصول&hellip;"
+
+#: templates/price-change.php:221
+msgid "Categories to include"
+msgstr "دسته‌بندی‌های شامل"
+
+#: templates/price-change.php:244
+msgid "Tags to include"
+msgstr "برچسب‌های شامل"
+
+#: templates/price-change.php:247 templates/price-rule-form.php:207
+msgid "Search for tags"
+msgstr "جستجوی برچسب‌ها"
+
+#: templates/price-change.php:262
+msgid "Exclude products"
+msgstr "مستثنی کردن محصولات"
+
+#: templates/price-change.php:269
+msgid "Products to exclude"
+msgstr "محصولات مستثنی"
+
+#. translators: %s: Attribute label.
+#: templates/price-change.php:286
+#, php-format
+msgid "Products in <b>%s</b> attribute"
+msgstr "محصولات در ویژگی <b>%s</b>"
+
+#: templates/price-change.php:308 templates/price-rule-form.php:461
+msgid "Preview prices"
+msgstr "پیش‌نمایش قیمت‌ها"
+
+#: templates/price-change.php:312
+msgid "Change prices"
+msgstr "تغییر قیمت‌ها"
+
+#: templates/price-change.php:346
+msgid "Save Changes"
+msgstr "ذخیره تغییرات"
+
+#: templates/price-change.php:358
+msgid "Block size"
+msgstr "اندازه بلاک"
+
+#: templates/price-change.php:360
+msgid "Number of products processed in a single products query."
+msgstr "تعداد محصولاتی که در یک کوئری محصول پردازش می‌شوند."
+
+#: templates/price-change.php:368
+msgid "Preview count"
+msgstr "تعداد پیش‌نمایش"
+
+#: templates/price-change.php:370
+msgid "Number of products for preview."
+msgstr "تعداد محصولات برای پیش‌نمایش."
+
+#: templates/price-change.php:378
+msgid "Time limit"
+msgstr "محدودیت زمانی"
+
+#: templates/price-change.php:380
+msgid ""
+"The maximum execution time for a a single products query, in seconds. If set"
+" to zero, no time limit is imposed. If set to -1, default server time limit "
+"is used."
+msgstr ""
+"حداکثر زمان اجرای یک کوئری محصول (بر حسب ثانیه). اگر 0 باشد محدودیت زمانی "
+"اعمال نمی‌شود. اگر -1 باشد محدودیت پیش‌فرض سرور استفاده می‌شود."
+
+#: templates/price-change.php:388
+msgid "Cost of goods custom field"
+msgstr "فیلد سفارشی هزینه کالا (COG)"
+
+#: templates/price-change.php:390
+msgid ""
+"Meta key used by Scheduled Rules > Margin Check to read Cost of Goods. "
+"Default WooCommerce key: _cogs_total_value."
+msgstr ""
+"کلید متایی که در قوانین زمان‌بندی‌شده > بررسی حاشیه سود برای خواندن هزینه "
+"کالا (COG) استفاده می‌شود. کلید پیش‌فرض ووکامرس: _cogs_total_value."
+
+#: templates/price-change.php:396
+msgid ""
+"If you use another plugin for Cost of Goods, enter its product meta key "
+"here."
+msgstr ""
+"اگر برای هزینه کالا از افزونه دیگری استفاده می‌کنید، کلید متای محصول آن را "
+"اینجا وارد کنید."
+
+#: templates/price-change.php:419
+msgid ""
+"webhead is a professional, dynamic, and experienced web design, WordPress & "
+"SEO agency based in Vienna. Our agency consists of a talented, competent, "
+"and young team of experts who are passionate about each project and always "
+"strive to achieve the best possible results for our clients through the "
+"latest technologies & trends."
+msgstr ""
+"وب‌هد یک آژانس حرفه‌ای، پویا و باتجربه در زمینه طراحی وب، وردپرس و سئو در "
+"وین است. آژانس ما از تیمی جوان، متخصص و توانمند تشکیل شده که با اشتیاق روی "
+"هر پروژه کار می‌کنند و همیشه تلاش می‌کنند با جدیدترین فناوری‌ها و ترندها "
+"بهترین نتیجه ممکن را برای مشتریان رقم بزنند."
+
+#: templates/price-change.php:424
+msgid "Top-notch & Friendly Support"
+msgstr "پشتیبانی حرفه‌ای و دوستانه"
+
+#: templates/price-change.php:427
+msgid "Stuck somewhere? Feel free to open a ticket for getting Pro support."
+msgstr "جایی به مشکل خوردید؟ برای دریافت پشتیبانی حرفه‌ای، یک تیکت باز کنید."
+
+#: templates/price-change.php:432
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: templates/price-change.php:441
+msgid "Latest posts"
+msgstr "آخرین نوشته‌ها"
+
+#: templates/price-change.php:446
+msgid "Other plugins"
+msgstr "افزونه‌های دیگر"
+
+#: templates/price-change.php:480
+msgid "Confirm"
+msgstr "تایید"
+
+#: templates/price-change.php:485
+msgid "There is no undo for this action. Are you sure?"
+msgstr "این عملیات قابل بازگشت نیست. مطمئن هستید؟"
+
+#: templates/price-change.php:489 templates/price-rule-form.php:458
+#: templates/price-rules.php:217
+msgid "Cancel"
+msgstr "لغو"
+
+#: templates/price-change.php:492
+msgid "Yes, I'm sure"
+msgstr "بله، مطمئنم"
+
+#: templates/price-change.php:504
+msgid "Settings successfully saved."
+msgstr "تنظیمات با موفقیت ذخیره شد."
+
+#: templates/price-rule-form.php:22 templates/price-rules.php:26
+msgid "Add New Rule"
+msgstr "افزودن قانون جدید"
+
+#: templates/price-rule-form.php:33 templates/price-rule-form.php:54
+msgid "Basic Information"
+msgstr "اطلاعات پایه"
+
+#: templates/price-rule-form.php:37 templates/price-rule-form.php:107
+#: templates/price-rules.php:51
+msgid "Schedule"
+msgstr "زمان‌بندی"
+
+#: templates/price-rule-form.php:41 templates/price-rule-form.php:165
+msgid "Product Filters"
+msgstr "فیلترهای محصول"
+
+#: templates/price-rule-form.php:45 templates/price-rule-form.php:289
+msgid "Rule Settings"
+msgstr "تنظیمات قانون"
+
+#: templates/price-rule-form.php:59 templates/price-rules.php:49
+msgid "Rule Name"
+msgstr "نام قانون"
+
+#: templates/price-rule-form.php:63
+msgid "e.g. Margin Protection Rule"
+msgstr "مثلا: قانون محافظت از حاشیه سود"
+
+#: templates/price-rule-form.php:69
+msgid "Rule Type"
+msgstr "نوع قانون"
+
+#: templates/price-rule-form.php:81
+msgid ""
+"Ensures the sale price maintains a minimum margin above the Cost of Goods "
+"(COG)."
+msgstr ""
+"اطمینان می‌دهد قیمت فروش ویژه حداقل حاشیه سود بالاتر از هزینه کالا (COG) را "
+"حفظ کند."
+
+#: templates/price-rule-form.php:84
+msgid "Limits the maximum discount percentage compared to the regular price."
+msgstr "حداکثر درصد تخفیف را نسبت به قیمت عادی محدود می‌کند."
+
+#: templates/price-rule-form.php:87
+msgid "Applies a fixed or percentage price change to matching products."
+msgstr "یک تغییر قیمت ثابت یا درصدی را روی محصولات منطبق اعمال می‌کند."
+
+#: templates/price-rule-form.php:94 templates/price-rules.php:52
+msgid "Status"
+msgstr "وضعیت"
+
+#: templates/price-rule-form.php:97
+msgid "Active"
+msgstr "فعال"
+
+#: templates/price-rule-form.php:98
+msgid "Paused"
+msgstr "متوقف"
+
+#: templates/price-rule-form.php:112
+msgid "Frequency"
+msgstr "تناوب"
+
+#: templates/price-rule-form.php:126
+msgid "Start Time"
+msgstr "زمان شروع"
+
+#: templates/price-rule-form.php:128
+msgid "Specify the time at which this rule should run."
+msgstr "زمانی را مشخص کنید که این قانون باید اجرا شود."
+
+#: templates/price-rule-form.php:132
+msgid ""
+"The rule will first run at this Start Time and then repeat according to the "
+"Frequency interval."
+msgstr ""
+"این قانون ابتدا در این زمان شروع اجرا می‌شود و سپس بر اساس بازه تناوب تکرار "
+"می‌گردد."
+
+#: templates/price-rule-form.php:135
+msgid "The rule will execute exactly at these specific times every day."
+msgstr "این قانون هر روز دقیقاً در این زمان‌های مشخص اجرا می‌شود."
+
+#. translators: %s: Timezone
+#: templates/price-rule-form.php:142
+#, php-format
+msgid "Server Timezone: %s"
+msgstr "منطقه زمانی سرور: %s"
+
+#: templates/price-rule-form.php:149 templates/price-rule-form.php:354
+msgid "Remove"
+msgstr "حذف"
+
+#: templates/price-rule-form.php:156
+msgid "Add Time"
+msgstr "افزودن زمان"
+
+#: templates/price-rule-form.php:170
+msgid "Tip:"
+msgstr "نکته:"
+
+#: templates/price-rule-form.php:171
+msgid "Leave all filters empty to apply this rule to all products."
+msgstr "برای اعمال این قانون روی همه محصولات، همه فیلترها را خالی بگذارید."
+
+#: templates/price-rule-form.php:177
+msgid "Filter by Taxonomy"
+msgstr "فیلتر بر اساس تاکسونومی"
+
+#: templates/price-rule-form.php:182 templates/price-rule-logs.php:57
+#: templates/price-rule-logs.php:160 templates/price-rule-preview.php:27
+#: templates/products-table.php:19
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+#: templates/price-rule-form.php:204 templates/price-rule-logs.php:69
+#: templates/products-table.php:20
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+#: templates/price-rule-form.php:219 templates/price-rule-logs.php:81
+msgid "Brands"
+msgstr "برندها"
+
+#: templates/price-rule-form.php:239
+msgid "No brands found or taxonomy missing."
+msgstr "برندی یافت نشد یا تاکسونومی موجود نیست."
+
+#: templates/price-rule-form.php:247 templates/price-rule-logs.php:93
+msgid "Attributes"
+msgstr "ویژگی‌ها"
+
+#: templates/price-rule-form.php:250
+msgid "Search for attributes"
+msgstr "جستجوی ویژگی‌ها"
+
+#: templates/price-rule-form.php:251
+msgid "Search attributes..."
+msgstr "جستجوی ویژگی‌ها..."
+
+#: templates/price-rule-form.php:263
+msgid "Filter by Specific Products"
+msgstr "فیلتر بر اساس محصولات مشخص"
+
+#: templates/price-rule-form.php:266
+msgid "Include Products"
+msgstr "محصولات شامل"
+
+#: templates/price-rule-form.php:275
+msgid "Exclude Products"
+msgstr "محصولات مستثنی"
+
+#: templates/price-rule-form.php:296
+msgid ""
+"Define margin tiers based on Cost of Goods (COG). If the sale price falls "
+"below COG + margin, it will be adjusted upward."
+msgstr ""
+"سطوح حاشیه سود را بر اساس هزینه کالا (COG) تعریف کنید. اگر قیمت فروش ویژه "
+"کمتر از COG + حاشیه سود باشد، به سمت بالا تنظیم می‌شود."
+
+#: templates/price-rule-form.php:302
+msgid "Tax Notice:"
+msgstr "اطلاعیه مالیات:"
+
+#: templates/price-rule-form.php:303
+msgid ""
+"Your store is set to enter prices inclusive of tax. Taxes will be deducted "
+"internally before margins are calculated against the Cost of Goods (which is"
+" net), and then re-applied to the final sale price."
+msgstr ""
+"فروشگاه شما روی ورود قیمت‌ها به‌صورت شامل مالیات تنظیم شده است. مالیات‌ها "
+"پیش از محاسبه حاشیه سود نسبت به هزینه کالا (خالص) به‌صورت داخلی کسر شده و "
+"سپس دوباره به قیمت نهایی اعمال می‌شوند."
+
+#: templates/price-rule-form.php:308
+msgid "Margin Tiers"
+msgstr "سطوح حاشیه سود"
+
+#: templates/price-rule-form.php:315 templates/price-rule-form.php:327
+msgid "Drag to sort"
+msgstr "برای مرتب‌سازی بکشید"
+
+#: templates/price-rule-form.php:318
+msgid "COG From"
+msgstr "COG از"
+
+#: templates/price-rule-form.php:319
+msgid "COG To"
+msgstr "COG تا"
+
+#: templates/price-rule-form.php:320
+msgid "Margin %"
+msgstr "درصد حاشیه سود"
+
+#: templates/price-rule-form.php:341
+msgid "0 = unlimited"
+msgstr "0 = بدون محدودیت"
+
+#: templates/price-rule-form.php:365
+msgid "Add Tier"
+msgstr "افزودن سطح"
+
+#: templates/price-rule-form.php:374
+msgid ""
+"If a product's discount percentage exceeds this threshold, the sale price "
+"will be adjusted upward to meet the limit."
+msgstr ""
+"اگر درصد تخفیف یک محصول از این آستانه بیشتر شود، قیمت فروش ویژه برای رعایت "
+"این محدودیت به سمت بالا تنظیم می‌شود."
+
+#: templates/price-rule-form.php:387
+msgid ""
+"Example: If set to 20%, a product with regular price 100€ cannot have a sale"
+" price below 80€."
+msgstr ""
+"مثال: اگر روی 20٪ تنظیم شود، محصولی با قیمت عادی 100€ نمی‌تواند قیمت فروش "
+"ویژه کمتر از 80€ داشته باشد."
+
+#: templates/price-rule-form.php:396
+msgid "Apply a price modification to matching products on each scheduled run."
+msgstr ""
+"در هر اجرای زمان‌بندی‌شده، یک تغییر قیمت روی محصولات منطبق اعمال کنید."
+
+#: templates/price-rule-form.php:401 templates/price-rule-logs.php:183
+#: templates/price-rule-preview.php:65 templates/products-table.php:39
+msgid "Price Type"
+msgstr "نوع قیمت"
+
+#: templates/price-rule-form.php:411
+msgid "Price Action"
+msgstr "عملیات قیمت"
+
+#: templates/price-rule-form.php:418
+msgid "Divide (/)"
+msgstr "تقسیم (/)"
+
+#: templates/price-rule-form.php:434
+msgid "Preview Results"
+msgstr "نتایج پیش‌نمایش"
+
+#: templates/price-rule-form.php:437
+msgid "Review estimated price changes before saving this rule."
+msgstr "پیش از ذخیره این قانون، تغییرات تخمینی قیمت را بررسی کنید."
+
+#: templates/price-rule-form.php:451 templates/price-rule-logs.php:233
+msgid "Previous"
+msgstr "قبلی"
+
+#: templates/price-rule-form.php:454 templates/price-rule-logs.php:247
+msgid "Next"
+msgstr "بعدی"
+
+#: templates/price-rule-form.php:466
+msgid "Save Rule"
+msgstr "ذخیره قانون"
+
+#: templates/price-rule-logs.php:41
+msgid "Date From"
+msgstr "تاریخ از"
+
+#: templates/price-rule-logs.php:49
+msgid "Date To"
+msgstr "تاریخ تا"
+
+#: templates/price-rule-logs.php:116
+msgid "Apply Filters"
+msgstr "اعمال فیلترها"
+
+#: templates/price-rule-logs.php:120
+msgid "Reset"
+msgstr "بازنشانی"
+
+#: templates/price-rule-logs.php:128
+msgid "Clear Logs"
+msgstr "پاک‌سازی لاگ‌ها"
+
+#. translators: 1: start row, 2: end row, 3: total rows
+#: templates/price-rule-logs.php:137
+#, php-format
+msgid "Showing %1$d-%2$d of %3$d entries"
+msgstr "نمایش %1$d تا %2$d از %3$d مورد"
+
+#: templates/price-rule-logs.php:144
+msgid "No logs found."
+msgstr "لاگی یافت نشد."
+
+#: templates/price-rule-logs.php:152
+msgid "No execution logs found for the selected filters."
+msgstr "برای فیلترهای انتخاب‌شده لاگ اجرایی یافت نشد."
+
+#: templates/price-rule-logs.php:159 templates/price-rule-preview.php:26
+#: templates/products-table.php:18
+msgid "Product"
+msgstr "محصول"
+
+#: templates/price-rule-logs.php:161 templates/price-rule-preview.php:28
+#: templates/products-table.php:21
+msgid "Modified Details"
+msgstr "جزئیات تغییر"
+
+#: templates/price-rule-logs.php:162 templates/price-rule-preview.php:29
+msgid "Reason"
+msgstr "علت"
+
+#: templates/price-rule-logs.php:163
+msgid "Date"
+msgstr "تاریخ"
+
+#. translators: 1: Product ID, 2: Product name
+#: templates/price-rule-logs.php:173 templates/price-rule-preview.php:55
+#, php-format
+msgid "(#%1$d) %2$s"
+msgstr "(#%1$d) %2$s"
+
+#: templates/price-rule-logs.php:194 templates/price-rule-preview.php:76
+#: templates/price-rule-preview.php:86
+msgid "Removed"
+msgstr "حذف شد"
+
+#: templates/price-rule-logs.php:229
+msgid "Execution logs pagination"
+msgstr "صفحه‌بندی لاگ‌های اجرا"
+
+#: templates/price-rule-preview.php:16
+msgid "No products found matching these conditions."
+msgstr "محصولی مطابق این شرایط یافت نشد."
+
+#: templates/price-rule-preview.php:20
+msgid ""
+"Products found, but none require price adjustment based on current settings "
+"(e.g. margins already optimal)."
+msgstr ""
+"محصولاتی یافت شد، اما بر اساس تنظیمات فعلی هیچ‌کدام نیاز به تغییر قیمت "
+"ندارند (مثلاً حاشیه سود از قبل بهینه است)."
+
+#: templates/price-rule-preview.php:30 templates/price-rules.php:54
+msgid "Actions"
+msgstr "عملیات"
+
+#: templates/price-rule-preview.php:104 templates/price-rule-preview.php:105
+#: templates/price-rule-preview.php:106
+msgid "Add to Exclude"
+msgstr "افزودن به عدم‌اعمال"
+
+#: templates/price-rules.php:35
+msgid "No Scheduled Rules Yet"
+msgstr "هنوز هیچ قانون زمان‌بندی‌شده‌ای وجود ندارد"
+
+#: templates/price-rules.php:37
+msgid ""
+"Create your first scheduled price rule to automatically adjust product "
+"prices based on conditions like margins, discounts, and more."
+msgstr ""
+"اولین قانون زمان‌بندی‌شده قیمت خود را ایجاد کنید تا قیمت محصولات بر اساس "
+"شرایطی مانند حاشیه سود، تخفیف و موارد دیگر به‌صورت خودکار تنظیم شود."
+
+#: templates/price-rules.php:41
+msgid "Create Your First Rule"
+msgstr "اولین قانون خود را ایجاد کنید"
+
+#: templates/price-rules.php:50
+msgid "Type"
+msgstr "نوع"
+
+#: templates/price-rules.php:53
+msgid "Last Run"
+msgstr "آخرین اجرا"
+
+#: templates/price-rules.php:121
+msgid "ago"
+msgstr "پیش"
+
+#: templates/price-rules.php:124
+msgid "Never"
+msgstr "هرگز"
+
+#: templates/price-rules.php:141
+msgid "Edit"
+msgstr "ویرایش"
+
+#: templates/price-rules.php:146
+msgid "Run Now"
+msgstr "اجرای فوری"
+
+#: templates/price-rules.php:151
+msgid "View Logs"
+msgstr "مشاهده لاگ‌ها"
+
+#: templates/price-rules.php:156 templates/price-rules.php:221
+msgid "Delete"
+msgstr "حذف"
+
+#: templates/price-rules.php:187
+msgid "Execution Logs"
+msgstr "لاگ‌های اجرا"
+
+#: templates/price-rules.php:208
+msgid "Delete Rule"
+msgstr "حذف قانون"
+
+#: templates/price-rules.php:213
+msgid ""
+"Are you sure you want to delete this rule? All associated logs will also be "
+"deleted. This action cannot be undone."
+msgstr ""
+"آیا مطمئن هستید که می‌خواهید این قانون را حذف کنید؟ همه لاگ‌های مرتبط نیز "
+"حذف خواهند شد. این عملیات قابل بازگشت نیست."
+
+#: templates/products-table.php:13
+msgid "Results"
+msgstr "نتایج"

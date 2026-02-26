@@ -1,0 +1,1090 @@
+# Copyright (C) 2026 webhead GmbH
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bulk Price Update for WooCommerce 1.0.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wh-bulk-price-update-for-woocommerce\n"
+"POT-Creation-Date: 2026-02-24T07:31:16+00:00\n"
+"PO-Revision-Date: 2026-02-24 11:22\n"
+"Last-Translator: webhead GmbH <info@webhead.at>\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: wh-bulk-price-update-for-woocommerce\n"
+"X-Generator: Manual translation\n"
+
+#. Plugin Name of the plugin
+#: wh-bulk-price-update.php
+msgid "Bulk Price Update for WooCommerce"
+msgstr "Bulk-Preisaktualisierung für WooCommerce"
+
+#. Plugin URI of the plugin
+#: wh-bulk-price-update.php
+msgid "https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce"
+msgstr "https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce"
+
+#. Description of the plugin
+#: wh-bulk-price-update.php
+msgid ""
+"Easily update WooCommerce product prices in bulk by percentage or fixed "
+"amounts based on categories, tags, and attributes."
+msgstr ""
+"WooCommerce-Produktpreise einfach in großen Mengen prozentual oder mit "
+"festen Beträgen anhand von Kategorien, Tags und Attributen aktualisieren."
+
+#. Author of the plugin
+#: wh-bulk-price-update.php
+msgid "webhead GmbH"
+msgstr "webhead GmbH"
+
+#. Author URI of the plugin
+#: wh-bulk-price-update.php
+msgid "https://webhead.at"
+msgstr "https://webhead.at"
+
+#. translators: %d: Preview block size.
+#: includes/class-wh-bulk-price-update-ajax.php:92
+#, php-format
+msgid "A maximum of %d products are shown in the preview mode"
+msgstr "Im Vorschaumodus werden maximal %d Produkte angezeigt."
+
+#. translators: %d: Updated products count.
+#: includes/class-wh-bulk-price-update-ajax.php:268
+#, php-format
+msgid "The price of %d products has been successfully updated"
+msgstr "Der Preis von %d Produkten wurde erfolgreich aktualisiert."
+
+#: includes/class-wh-bulk-price-update-ajax.php:355
+#: includes/class-wh-bulk-price-update-ajax.php:423
+#: includes/class-wh-bulk-price-update-ajax.php:458
+#: includes/class-wh-bulk-price-update-ajax.php:501
+#: includes/class-wh-bulk-price-update-ajax.php:534
+#: includes/class-wh-bulk-price-update-ajax.php:588
+#: includes/class-wh-bulk-price-update-ajax.php:614
+#: includes/class-wh-bulk-price-update-ajax.php:1137
+#: includes/class-wh-bulk-price-update-ajax.php:1197
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#: includes/class-wh-bulk-price-update-ajax.php:371
+msgid "Rule name is required."
+msgstr "Der Regelname ist erforderlich."
+
+#: includes/class-wh-bulk-price-update-ajax.php:387
+msgid "Rule updated successfully."
+msgstr "Regel erfolgreich aktualisiert."
+
+#: includes/class-wh-bulk-price-update-ajax.php:391
+msgid "Failed to update rule."
+msgstr "Regel konnte nicht aktualisiert werden."
+
+#: includes/class-wh-bulk-price-update-ajax.php:404
+msgid "Rule created successfully."
+msgstr "Regel erfolgreich erstellt."
+
+#: includes/class-wh-bulk-price-update-ajax.php:408
+msgid "Failed to create rule."
+msgstr "Regel konnte nicht erstellt werden."
+
+#: includes/class-wh-bulk-price-update-ajax.php:429
+#: includes/class-wh-bulk-price-update-ajax.php:540
+#: includes/class-wh-bulk-price-update-ajax.php:593
+msgid "Invalid rule ID."
+msgstr "Ungültige Regel-ID."
+
+#: includes/class-wh-bulk-price-update-ajax.php:442
+msgid "Rule deleted successfully."
+msgstr "Regel erfolgreich gelöscht."
+
+#: includes/class-wh-bulk-price-update-ajax.php:444
+msgid "Failed to delete rule."
+msgstr "Regel konnte nicht gelöscht werden."
+
+#: includes/class-wh-bulk-price-update-ajax.php:465
+#: includes/class-wh-bulk-price-update-ajax.php:508
+#: includes/class-wh-bulk-price-update-ajax.php:545
+#: includes/class-wh-bulk-price-update-ajax.php:598
+msgid "Rule not found."
+msgstr "Regel nicht gefunden."
+
+#. translators: %s: New status
+#: includes/class-wh-bulk-price-update-ajax.php:481
+#, php-format
+msgid "Rule status changed to %s."
+msgstr "Regelstatus auf %s geändert."
+
+#: includes/class-wh-bulk-price-update-ajax.php:487
+msgid "Failed to toggle rule."
+msgstr "Umschalten der Regel fehlgeschlagen."
+
+#. translators: 1: Processed count, 2: Adjusted count
+#: includes/class-wh-bulk-price-update-ajax.php:516
+#, php-format
+msgid "Rule executed. %1$d products processed, %2$d adjusted."
+msgstr "Regel ausgeführt. %1$d Produkte verarbeitet, %2$d angepasst."
+
+#: includes/class-wh-bulk-price-update-ajax.php:603
+msgid "Failed to clear logs."
+msgstr "Protokolle konnten nicht gelöscht werden."
+
+#: includes/class-wh-bulk-price-update-ajax.php:606
+msgid "Execution logs cleared."
+msgstr "Ausführungsprotokolle gelöscht."
+
+#: includes/class-wh-bulk-price-update-ajax.php:747
+#: includes/class-wh-bulk-price-update-ajax.php:1074
+#: templates/price-rule-logs.php:177
+msgid "Uncategorized"
+msgstr "Ohne Kategorie"
+
+#: includes/class-wh-bulk-price-update-ajax.php:763
+#: templates/price-rule-form.php:405
+msgid "Regular Price"
+msgstr "Regulärer Preis"
+
+#: includes/class-wh-bulk-price-update-ajax.php:764
+#: templates/price-rule-form.php:404 templates/price-rule-preview.php:84
+msgid "Sale Price"
+msgstr "Angebotspreis"
+
+#: includes/class-wh-bulk-price-update-ajax.php:765
+msgid "Active Price"
+msgstr "Aktiver Preis"
+
+#: includes/class-wh-bulk-price-update-ajax.php:775
+msgid "Price"
+msgstr "Preis"
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:821
+#, php-format
+msgid "Sale removed; required margin is %s%%."
+msgstr "Angebotspreis entfernt; erforderliche Marge ist %s%%."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:829
+#, php-format
+msgid "Sale raised for %s%% margin."
+msgstr "Angebotspreis für %s%% Marge erhöht."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:837
+#, php-format
+msgid "Regular raised for %s%% margin; current sale will be removed."
+msgstr ""
+"Regulärer Preis für %s%% Marge erhöht; aktueller Angebotspreis wird "
+"entfernt."
+
+#. translators: %s: margin percent
+#: includes/class-wh-bulk-price-update-ajax.php:844
+#, php-format
+msgid "Regular raised for %s%% margin."
+msgstr "Regulärer Preis für %s%% Marge erhöht."
+
+#. translators: %s: max discount percent
+#: includes/class-wh-bulk-price-update-ajax.php:854
+#, php-format
+msgid "Discount capped at %s%%."
+msgstr "Rabatt auf %s%% begrenzt."
+
+#: includes/class-wh-bulk-price-update-ajax.php:859
+msgid "Discount exceeds rule cap."
+msgstr "Rabatt überschreitet die Regelgrenze."
+
+#: includes/class-wh-bulk-price-update-ajax.php:867
+msgid "Sale removed by rule action."
+msgstr "Angebotspreis durch Regelaktion entfernt."
+
+#: includes/class-wh-bulk-price-update-ajax.php:871
+msgid "Regular change will remove current sale."
+msgstr "Änderung des regulären Preises entfernt den aktuellen Angebotspreis."
+
+#. translators: 1: action label, 2: value
+#: includes/class-wh-bulk-price-update-ajax.php:882
+#, php-format
+msgid "%1$s by %2$s."
+msgstr "%1$s um %2$s."
+
+#: includes/class-wh-bulk-price-update-ajax.php:888
+msgid "Rule adjustment applied."
+msgstr "Regelanpassung angewendet."
+
+#: includes/class-wh-bulk-price-update-ajax.php:892
+msgid "Sale removed by rule."
+msgstr "Angebotspreis durch Regel entfernt."
+
+#: includes/class-wh-bulk-price-update-ajax.php:896
+msgid "Current sale will be removed."
+msgstr "Aktueller Angebotspreis wird entfernt."
+
+#: includes/class-wh-bulk-price-update-ajax.php:899
+msgid "Price will be updated by this rule."
+msgstr "Preis wird durch diese Regel aktualisiert."
+
+#: includes/class-wh-bulk-price-update-ajax.php:912
+msgid "Increase"
+msgstr "Erhöhen"
+
+#: includes/class-wh-bulk-price-update-ajax.php:913
+msgid "Decrease"
+msgstr "Verringern"
+
+#: includes/class-wh-bulk-price-update-ajax.php:914
+msgid "Multiply"
+msgstr "Multiplizieren"
+
+#: includes/class-wh-bulk-price-update-ajax.php:915
+msgid "Divide"
+msgstr "Dividieren"
+
+#: includes/class-wh-bulk-price-update-ajax.php:916
+msgid "Set"
+msgstr "Setzen"
+
+#: includes/class-wh-bulk-price-update-ajax.php:919
+msgid "Adjust"
+msgstr "Anpassen"
+
+#: includes/class-wh-bulk-price-update.php:31
+#: includes/class-wh-bulk-price-update.php:32
+msgid "Bulk Price Update"
+msgstr "Bulk-Preisaktualisierung"
+
+#: includes/class-wh-bulk-price-update.php:144
+msgctxt "enhanced select"
+msgid "Select an option"
+msgstr "Eine Option auswählen"
+
+#: includes/class-wh-bulk-price-update.php:145
+msgid "Are you sure you want to delete this rule?"
+msgstr "Sind Sie sicher, dass Sie diese Regel löschen möchten?"
+
+#: includes/class-wh-bulk-price-update.php:146
+msgid "Are you sure you want to clear all execution logs for this rule?"
+msgstr ""
+"Sind Sie sicher, dass Sie alle Ausführungsprotokolle für diese Regel löschen"
+" möchten?"
+
+#: includes/class-wh-bulk-price-update.php:147
+msgid "Running..."
+msgstr "Wird ausgeführt..."
+
+#: includes/class-wh-bulk-price-update.php:148 templates/price-change.php:351
+#: templates/price-rule-form.php:470
+msgid "Saving..."
+msgstr "Wird gespeichert..."
+
+#: includes/class-wh-bulk-price-update.php:149
+msgid "Clearing..."
+msgstr "Wird gelöscht..."
+
+#: includes/class-wh-bulk-price-update.php:150 templates/price-rules.php:194
+msgid "Loading logs..."
+msgstr "Protokolle werden geladen..."
+
+#: includes/class-wh-bulk-price-update.php:151
+msgid "Excluded"
+msgstr "Ausgeschlossen"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Old regular price
+#: includes/class-wh-price-rule-executor.php:315
+#, php-format
+msgid ""
+"Regular price adjusted. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s"
+msgstr ""
+"Regulärer Preis angepasst. COG: %1$s, Marge: %2$s%%, Minimum: %3$s, vorher: "
+"%4$s"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Current sale price
+#: includes/class-wh-price-rule-executor.php:338
+#, php-format
+msgid ""
+"Sale price removed. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s (exceeds"
+" regular price)"
+msgstr ""
+"Angebotspreis entfernt. COG: %1$s, Marge: %2$s%%, Minimum: %3$s, vorher: "
+"%4$s (überschreitet regulären Preis)"
+
+#. translators: 1: COG, 2: Margin %, 3: Min price, 4: Old sale price, 5: New
+#. sale price
+#: includes/class-wh-price-rule-executor.php:355
+#, php-format
+msgid "Sale price adjusted. COG: %1$s, Margin: %2$s%%, Min: %3$s, was: %4$s"
+msgstr ""
+"Angebotspreis angepasst. COG: %1$s, Marge: %2$s%%, Minimum: %3$s, vorher: "
+"%4$s"
+
+#. translators: 1: Current discount %, 2: Max discount %, 3: Old sale price,
+#. 4: New sale price
+#: includes/class-wh-price-rule-executor.php:412
+#, php-format
+msgid "Discount reduced from %1$s%% to %2$s%%. Sale price: %3$s → %4$s"
+msgstr "Rabatt von %1$s%% auf %2$s%% reduziert. Angebotspreis: %3$s → %4$s"
+
+#. translators: 1: Action type, 2: Price value, 3: Change type, 4: Old price,
+#. 5: New price
+#: includes/class-wh-price-rule-executor.php:488
+#, php-format
+msgid "Price %1$s by %2$s (%3$s). %4$s → %5$s"
+msgstr "Preis %1$s um %2$s (%3$s). %4$s → %5$s"
+
+#: includes/class-wh-price-rule-executor.php:685
+msgid "Margin Check"
+msgstr "Margenprüfung"
+
+#: includes/class-wh-price-rule-executor.php:686
+#: templates/price-rule-form.php:379
+msgid "Maximum Discount Percentage"
+msgstr "Maximaler Rabattprozentsatz"
+
+#: includes/class-wh-price-rule-executor.php:687
+msgid "Price Adjustment"
+msgstr "Preisanpassung"
+
+#: includes/class-wh-price-rule-scheduler.php:46
+#: includes/class-wh-price-rule-scheduler.php:300
+msgid "Every 2 Hours"
+msgstr "Alle 2 Stunden"
+
+#: includes/class-wh-price-rule-scheduler.php:53
+#: includes/class-wh-price-rule-scheduler.php:301
+msgid "Every 4 Hours"
+msgstr "Alle 4 Stunden"
+
+#: includes/class-wh-price-rule-scheduler.php:60
+#: includes/class-wh-price-rule-scheduler.php:302
+msgid "Every 6 Hours"
+msgstr "Alle 6 Stunden"
+
+#: includes/class-wh-price-rule-scheduler.php:299
+msgid "Every Hour"
+msgstr "Jede Stunde"
+
+#: includes/class-wh-price-rule-scheduler.php:303
+msgid "Twice Daily"
+msgstr "Zweimal täglich"
+
+#: includes/class-wh-price-rule-scheduler.php:304
+msgid "Once Daily"
+msgstr "Einmal täglich"
+
+#: includes/class-wh-price-rule-scheduler.php:305
+msgid "Once Weekly"
+msgstr "Einmal wöchentlich"
+
+#: includes/class-wh-price-rule-scheduler.php:306
+msgid "Custom Times"
+msgstr "Benutzerdefinierte Zeiten"
+
+#: templates/plugins-loop.php:36
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+#: templates/posts-loop.php:30
+msgid "Read more"
+msgstr "Weiterlesen"
+
+#: templates/price-change.php:38 templates/price-change.php:110
+msgid "Update prices"
+msgstr "Preise aktualisieren"
+
+#: templates/price-change.php:41
+msgid "Bulk update product prices"
+msgstr "Produktpreise in Massen aktualisieren"
+
+#: templates/price-change.php:54 templates/price-rules.php:21
+msgid "Scheduled Rules"
+msgstr "Geplante Regeln"
+
+#: templates/price-change.php:57
+msgid "Automated price adjustments"
+msgstr "Automatisierte Preisanpassungen"
+
+#: templates/price-change.php:70 templates/price-change.php:340
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: templates/price-change.php:73
+msgid "All general settings"
+msgstr "Alle allgemeinen Einstellungen"
+
+#: templates/price-change.php:86 templates/price-change.php:409
+msgid "About us"
+msgstr "Über uns"
+
+#: templates/price-change.php:89
+msgid "Our story and other plugins"
+msgstr "Unsere Geschichte und weitere Plugins"
+
+#: templates/price-change.php:116 templates/price-change.php:119
+msgid "Price type to modify"
+msgstr "Zu ändernder Preistyp"
+
+#: templates/price-change.php:121
+msgid "Regular and sale prices"
+msgstr "Regulärer und Angebotspreis"
+
+#: templates/price-change.php:124
+msgid "Regular price only"
+msgstr "Nur regulärer Preis"
+
+#: templates/price-change.php:127
+msgid "Sale price only"
+msgstr "Nur Angebotspreis"
+
+#: templates/price-change.php:133
+msgid "Price action"
+msgstr "Preisaktion"
+
+#: templates/price-change.php:137
+msgid "Action type to modify"
+msgstr "Zu ändernder Aktionstyp"
+
+#: templates/price-change.php:139 templates/price-rule-form.php:415
+msgid "Increase (+)"
+msgstr "Erhöhen (+)"
+
+#: templates/price-change.php:142 templates/price-rule-form.php:416
+msgid "Decrease (-)"
+msgstr "Verringern (-)"
+
+#: templates/price-change.php:145 templates/price-rule-form.php:417
+msgid "Multiply (*)"
+msgstr "Multiplizieren (*)"
+
+#: templates/price-change.php:148
+msgid "Divide  (/)"
+msgstr "Dividieren (/)"
+
+#: templates/price-change.php:151 templates/price-rule-form.php:419
+msgid "Direct price"
+msgstr "Direkter Preis"
+
+#: templates/price-change.php:159
+msgid "Change type to modify"
+msgstr "Zu ändernder Änderungstyp"
+
+#: templates/price-change.php:161 templates/price-rule-form.php:423
+msgid "Percentage (%)"
+msgstr "Prozent (%)"
+
+#: templates/price-change.php:164 templates/price-rule-form.php:424
+msgid "Fixed"
+msgstr "Fest"
+
+#: templates/price-change.php:169
+msgid "Select this if you want to set all products prices to same value."
+msgstr ""
+"Wählen Sie dies, wenn Sie alle Produktpreise auf denselben Wert setzen "
+"möchten."
+
+#: templates/price-change.php:172
+msgid "Example"
+msgstr "Beispiel"
+
+#: templates/price-change.php:174 templates/price-rule-logs.php:184
+#: templates/price-rule-preview.php:66 templates/products-table.php:40
+msgid "Original Price"
+msgstr "Ursprünglicher Preis"
+
+#: templates/price-change.php:183 templates/price-rule-logs.php:185
+#: templates/price-rule-preview.php:67 templates/products-table.php:41
+msgid "Modified Price"
+msgstr "Geänderter Preis"
+
+#: templates/price-change.php:194 templates/price-change.php:197
+msgid "Apply to"
+msgstr "Anwenden auf"
+
+#: templates/price-change.php:199
+msgid "All products"
+msgstr "Alle Produkte"
+
+#: templates/price-change.php:202
+msgid "Specific products and categories"
+msgstr "Bestimmte Produkte und Kategorien"
+
+#: templates/price-change.php:211
+msgid "Products to include"
+msgstr "Einzuschließende Produkte"
+
+#: templates/price-change.php:216 templates/price-change.php:273
+#: templates/price-rule-form.php:270 templates/price-rule-form.php:279
+msgid "Search for a product&hellip;"
+msgstr "Nach einem Produkt suchen&hellip;"
+
+#: templates/price-change.php:221
+msgid "Categories to include"
+msgstr "Einzuschließende Kategorien"
+
+#: templates/price-change.php:244
+msgid "Tags to include"
+msgstr "Einzuschließende Tags"
+
+#: templates/price-change.php:247 templates/price-rule-form.php:207
+msgid "Search for tags"
+msgstr "Nach Tags suchen"
+
+#: templates/price-change.php:262
+msgid "Exclude products"
+msgstr "Produkte ausschließen"
+
+#: templates/price-change.php:269
+msgid "Products to exclude"
+msgstr "Auszuschließende Produkte"
+
+#. translators: %s: Attribute label.
+#: templates/price-change.php:286
+#, php-format
+msgid "Products in <b>%s</b> attribute"
+msgstr "Produkte mit Attribut <b>%s</b>"
+
+#: templates/price-change.php:308 templates/price-rule-form.php:461
+msgid "Preview prices"
+msgstr "Preise vorschauen"
+
+#: templates/price-change.php:312
+msgid "Change prices"
+msgstr "Preise ändern"
+
+#: templates/price-change.php:346
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: templates/price-change.php:358
+msgid "Block size"
+msgstr "Blockgröße"
+
+#: templates/price-change.php:360
+msgid "Number of products processed in a single products query."
+msgstr ""
+"Anzahl der Produkte, die in einer einzelnen Produktabfrage verarbeitet "
+"werden."
+
+#: templates/price-change.php:368
+msgid "Preview count"
+msgstr "Anzahl für Vorschau"
+
+#: templates/price-change.php:370
+msgid "Number of products for preview."
+msgstr "Anzahl der Produkte für die Vorschau."
+
+#: templates/price-change.php:378
+msgid "Time limit"
+msgstr "Zeitlimit"
+
+#: templates/price-change.php:380
+msgid ""
+"The maximum execution time for a a single products query, in seconds. If set"
+" to zero, no time limit is imposed. If set to -1, default server time limit "
+"is used."
+msgstr ""
+"Die maximale Ausführungszeit für eine einzelne Produktabfrage in Sekunden. "
+"Bei 0 wird kein Zeitlimit gesetzt. Bei -1 wird das Standard-Zeitlimit des "
+"Servers verwendet."
+
+#: templates/price-change.php:388
+msgid "Cost of goods custom field"
+msgstr "Custom-Feld für Wareneinsatz (COG)"
+
+#: templates/price-change.php:390
+msgid ""
+"Meta key used by Scheduled Rules > Margin Check to read Cost of Goods. "
+"Default WooCommerce key: _cogs_total_value."
+msgstr ""
+"Meta-Schlüssel, den Geplante Regeln > Margenprüfung zum Lesen der "
+"Warenkosten (COG) verwendet. Standard-WooCommerce-Schlüssel: "
+"_cogs_total_value."
+
+#: templates/price-change.php:396
+msgid ""
+"If you use another plugin for Cost of Goods, enter its product meta key "
+"here."
+msgstr ""
+"Wenn Sie ein anderes Plugin für Cost of Goods verwenden, tragen Sie hier "
+"dessen Produkt-Meta-Schlüssel ein."
+
+#: templates/price-change.php:419
+msgid ""
+"webhead is a professional, dynamic, and experienced web design, WordPress & "
+"SEO agency based in Vienna. Our agency consists of a talented, competent, "
+"and young team of experts who are passionate about each project and always "
+"strive to achieve the best possible results for our clients through the "
+"latest technologies & trends."
+msgstr ""
+"webhead ist eine professionelle, dynamische und erfahrene Webdesign-, "
+"WordPress- und SEO-Agentur mit Sitz in Wien. Unsere Agentur besteht aus "
+"einem talentierten, kompetenten und jungen Expertenteam, das jedes Projekt "
+"mit Leidenschaft begleitet und stets die bestmöglichen Ergebnisse für unsere"
+" Kunden mit den neuesten Technologien und Trends anstrebt."
+
+#: templates/price-change.php:424
+msgid "Top-notch & Friendly Support"
+msgstr "Erstklassiger und freundlicher Support"
+
+#: templates/price-change.php:427
+msgid "Stuck somewhere? Feel free to open a ticket for getting Pro support."
+msgstr ""
+"Irgendwo festgefahren? Öffnen Sie gerne ein Ticket, um Pro-Support zu "
+"erhalten."
+
+#: templates/price-change.php:432
+msgid "Support"
+msgstr "Support"
+
+#: templates/price-change.php:441
+msgid "Latest posts"
+msgstr "Neueste Beiträge"
+
+#: templates/price-change.php:446
+msgid "Other plugins"
+msgstr "Weitere Plugins"
+
+#: templates/price-change.php:480
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: templates/price-change.php:485
+msgid "There is no undo for this action. Are you sure?"
+msgstr "Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?"
+
+#: templates/price-change.php:489 templates/price-rule-form.php:458
+#: templates/price-rules.php:217
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/price-change.php:492
+msgid "Yes, I'm sure"
+msgstr "Ja, ich bin sicher"
+
+#: templates/price-change.php:504
+msgid "Settings successfully saved."
+msgstr "Einstellungen erfolgreich gespeichert."
+
+#: templates/price-rule-form.php:22 templates/price-rules.php:26
+msgid "Add New Rule"
+msgstr "Neue Regel hinzufügen"
+
+#: templates/price-rule-form.php:33 templates/price-rule-form.php:54
+msgid "Basic Information"
+msgstr "Grundinformationen"
+
+#: templates/price-rule-form.php:37 templates/price-rule-form.php:107
+#: templates/price-rules.php:51
+msgid "Schedule"
+msgstr "Zeitplan"
+
+#: templates/price-rule-form.php:41 templates/price-rule-form.php:165
+msgid "Product Filters"
+msgstr "Produktfilter"
+
+#: templates/price-rule-form.php:45 templates/price-rule-form.php:289
+msgid "Rule Settings"
+msgstr "Regeleinstellungen"
+
+#: templates/price-rule-form.php:59 templates/price-rules.php:49
+msgid "Rule Name"
+msgstr "Regelname"
+
+#: templates/price-rule-form.php:63
+msgid "e.g. Margin Protection Rule"
+msgstr "z. B. Margenschutz-Regel"
+
+#: templates/price-rule-form.php:69
+msgid "Rule Type"
+msgstr "Regeltyp"
+
+#: templates/price-rule-form.php:81
+msgid ""
+"Ensures the sale price maintains a minimum margin above the Cost of Goods "
+"(COG)."
+msgstr ""
+"Stellt sicher, dass der Angebotspreis eine Mindestmarge über den Warenkosten"
+" (COG) einhält."
+
+#: templates/price-rule-form.php:84
+msgid "Limits the maximum discount percentage compared to the regular price."
+msgstr ""
+"Begrenzt den maximalen Rabattprozentsatz im Vergleich zum regulären Preis."
+
+#: templates/price-rule-form.php:87
+msgid "Applies a fixed or percentage price change to matching products."
+msgstr ""
+"Wendet eine feste oder prozentuale Preisänderung auf passende Produkte an."
+
+#: templates/price-rule-form.php:94 templates/price-rules.php:52
+msgid "Status"
+msgstr "Status"
+
+#: templates/price-rule-form.php:97
+msgid "Active"
+msgstr "Aktiv"
+
+#: templates/price-rule-form.php:98
+msgid "Paused"
+msgstr "Pausiert"
+
+#: templates/price-rule-form.php:112
+msgid "Frequency"
+msgstr "Frequenz"
+
+#: templates/price-rule-form.php:126
+msgid "Start Time"
+msgstr "Startzeit"
+
+#: templates/price-rule-form.php:128
+msgid "Specify the time at which this rule should run."
+msgstr "Geben Sie die Uhrzeit an, zu der diese Regel ausgeführt werden soll."
+
+#: templates/price-rule-form.php:132
+msgid ""
+"The rule will first run at this Start Time and then repeat according to the "
+"Frequency interval."
+msgstr ""
+"Die Regel wird zuerst zu dieser Startzeit ausgeführt und danach gemäß dem "
+"Frequenzintervall wiederholt."
+
+#: templates/price-rule-form.php:135
+msgid "The rule will execute exactly at these specific times every day."
+msgstr ""
+"Die Regel wird jeden Tag genau zu diesen angegebenen Uhrzeiten ausgeführt."
+
+#. translators: %s: Timezone
+#: templates/price-rule-form.php:142
+#, php-format
+msgid "Server Timezone: %s"
+msgstr "Server-Zeitzone: %s"
+
+#: templates/price-rule-form.php:149 templates/price-rule-form.php:354
+msgid "Remove"
+msgstr "Entfernen"
+
+#: templates/price-rule-form.php:156
+msgid "Add Time"
+msgstr "Zeit hinzufügen"
+
+#: templates/price-rule-form.php:170
+msgid "Tip:"
+msgstr "Tipp:"
+
+#: templates/price-rule-form.php:171
+msgid "Leave all filters empty to apply this rule to all products."
+msgstr ""
+"Lassen Sie alle Filter leer, um diese Regel auf alle Produkte anzuwenden."
+
+#: templates/price-rule-form.php:177
+msgid "Filter by Taxonomy"
+msgstr "Nach Taxonomie filtern"
+
+#: templates/price-rule-form.php:182 templates/price-rule-logs.php:57
+#: templates/price-rule-logs.php:160 templates/price-rule-preview.php:27
+#: templates/products-table.php:19
+msgid "Categories"
+msgstr "Kategorien"
+
+#: templates/price-rule-form.php:204 templates/price-rule-logs.php:69
+#: templates/products-table.php:20
+msgid "Tags"
+msgstr "Tags"
+
+#: templates/price-rule-form.php:219 templates/price-rule-logs.php:81
+msgid "Brands"
+msgstr "Marken"
+
+#: templates/price-rule-form.php:239
+msgid "No brands found or taxonomy missing."
+msgstr "Keine Marken gefunden oder Taxonomie fehlt."
+
+#: templates/price-rule-form.php:247 templates/price-rule-logs.php:93
+msgid "Attributes"
+msgstr "Attribute"
+
+#: templates/price-rule-form.php:250
+msgid "Search for attributes"
+msgstr "Nach Attributen suchen"
+
+#: templates/price-rule-form.php:251
+msgid "Search attributes..."
+msgstr "Attribute suchen..."
+
+#: templates/price-rule-form.php:263
+msgid "Filter by Specific Products"
+msgstr "Nach bestimmten Produkten filtern"
+
+#: templates/price-rule-form.php:266
+msgid "Include Products"
+msgstr "Produkte einschließen"
+
+#: templates/price-rule-form.php:275
+msgid "Exclude Products"
+msgstr "Produkte ausschließen"
+
+#: templates/price-rule-form.php:296
+msgid ""
+"Define margin tiers based on Cost of Goods (COG). If the sale price falls "
+"below COG + margin, it will be adjusted upward."
+msgstr ""
+"Definieren Sie Margenstufen basierend auf Cost of Goods (COG). Wenn der "
+"Angebotspreis unter COG + Marge liegt, wird er nach oben angepasst."
+
+#: templates/price-rule-form.php:302
+msgid "Tax Notice:"
+msgstr "Steuerhinweis:"
+
+#: templates/price-rule-form.php:303
+msgid ""
+"Your store is set to enter prices inclusive of tax. Taxes will be deducted "
+"internally before margins are calculated against the Cost of Goods (which is"
+" net), and then re-applied to the final sale price."
+msgstr ""
+"Ihr Shop ist so eingestellt, dass Preise inklusive Steuern eingegeben "
+"werden. Steuern werden intern abgezogen, bevor Margen gegen die Warenkosten "
+"(netto) berechnet werden, und anschließend wieder auf den Endpreis "
+"angewendet."
+
+#: templates/price-rule-form.php:308
+msgid "Margin Tiers"
+msgstr "Margenstufen"
+
+#: templates/price-rule-form.php:315 templates/price-rule-form.php:327
+msgid "Drag to sort"
+msgstr "Zum Sortieren ziehen"
+
+#: templates/price-rule-form.php:318
+msgid "COG From"
+msgstr "COG von"
+
+#: templates/price-rule-form.php:319
+msgid "COG To"
+msgstr "COG bis"
+
+#: templates/price-rule-form.php:320
+msgid "Margin %"
+msgstr "Marge %"
+
+#: templates/price-rule-form.php:341
+msgid "0 = unlimited"
+msgstr "0 = unbegrenzt"
+
+#: templates/price-rule-form.php:365
+msgid "Add Tier"
+msgstr "Stufe hinzufügen"
+
+#: templates/price-rule-form.php:374
+msgid ""
+"If a product's discount percentage exceeds this threshold, the sale price "
+"will be adjusted upward to meet the limit."
+msgstr ""
+"Wenn der Rabattprozentsatz eines Produkts diesen Schwellenwert "
+"überschreitet, wird der Angebotspreis nach oben angepasst, um das Limit "
+"einzuhalten."
+
+#: templates/price-rule-form.php:387
+msgid ""
+"Example: If set to 20%, a product with regular price 100€ cannot have a sale"
+" price below 80€."
+msgstr ""
+"Beispiel: Bei 20% kann ein Produkt mit regulärem Preis 100€ keinen "
+"Angebotspreis unter 80€ haben."
+
+#: templates/price-rule-form.php:396
+msgid "Apply a price modification to matching products on each scheduled run."
+msgstr ""
+"Wenden Sie bei jeder geplanten Ausführung eine Preisänderung auf passende "
+"Produkte an."
+
+#: templates/price-rule-form.php:401 templates/price-rule-logs.php:183
+#: templates/price-rule-preview.php:65 templates/products-table.php:39
+msgid "Price Type"
+msgstr "Preistyp"
+
+#: templates/price-rule-form.php:411
+msgid "Price Action"
+msgstr "Preisaktion"
+
+#: templates/price-rule-form.php:418
+msgid "Divide (/)"
+msgstr "Dividieren (/)"
+
+#: templates/price-rule-form.php:434
+msgid "Preview Results"
+msgstr "Vorschauergebnisse"
+
+#: templates/price-rule-form.php:437
+msgid "Review estimated price changes before saving this rule."
+msgstr ""
+"Überprüfen Sie die geschätzten Preisänderungen, bevor Sie diese Regel "
+"speichern."
+
+#: templates/price-rule-form.php:451 templates/price-rule-logs.php:233
+msgid "Previous"
+msgstr "Zurück"
+
+#: templates/price-rule-form.php:454 templates/price-rule-logs.php:247
+msgid "Next"
+msgstr "Weiter"
+
+#: templates/price-rule-form.php:466
+msgid "Save Rule"
+msgstr "Regel speichern"
+
+#: templates/price-rule-logs.php:41
+msgid "Date From"
+msgstr "Datum von"
+
+#: templates/price-rule-logs.php:49
+msgid "Date To"
+msgstr "Datum bis"
+
+#: templates/price-rule-logs.php:116
+msgid "Apply Filters"
+msgstr "Filter anwenden"
+
+#: templates/price-rule-logs.php:120
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: templates/price-rule-logs.php:128
+msgid "Clear Logs"
+msgstr "Protokolle löschen"
+
+#. translators: 1: start row, 2: end row, 3: total rows
+#: templates/price-rule-logs.php:137
+#, php-format
+msgid "Showing %1$d-%2$d of %3$d entries"
+msgstr "Zeige %1$d-%2$d von %3$d Einträgen"
+
+#: templates/price-rule-logs.php:144
+msgid "No logs found."
+msgstr "Keine Protokolle gefunden."
+
+#: templates/price-rule-logs.php:152
+msgid "No execution logs found for the selected filters."
+msgstr ""
+"Für die ausgewählten Filter wurden keine Ausführungsprotokolle gefunden."
+
+#: templates/price-rule-logs.php:159 templates/price-rule-preview.php:26
+#: templates/products-table.php:18
+msgid "Product"
+msgstr "Produkt"
+
+#: templates/price-rule-logs.php:161 templates/price-rule-preview.php:28
+#: templates/products-table.php:21
+msgid "Modified Details"
+msgstr "Änderungsdetails"
+
+#: templates/price-rule-logs.php:162 templates/price-rule-preview.php:29
+msgid "Reason"
+msgstr "Grund"
+
+#: templates/price-rule-logs.php:163
+msgid "Date"
+msgstr "Datum"
+
+#. translators: 1: Product ID, 2: Product name
+#: templates/price-rule-logs.php:173 templates/price-rule-preview.php:55
+#, php-format
+msgid "(#%1$d) %2$s"
+msgstr "(#%1$d) %2$s"
+
+#: templates/price-rule-logs.php:194 templates/price-rule-preview.php:76
+#: templates/price-rule-preview.php:86
+msgid "Removed"
+msgstr "Entfernt"
+
+#: templates/price-rule-logs.php:229
+msgid "Execution logs pagination"
+msgstr "Seitennavigation der Ausführungsprotokolle"
+
+#: templates/price-rule-preview.php:16
+msgid "No products found matching these conditions."
+msgstr "Keine Produkte gefunden, die diesen Bedingungen entsprechen."
+
+#: templates/price-rule-preview.php:20
+msgid ""
+"Products found, but none require price adjustment based on current settings "
+"(e.g. margins already optimal)."
+msgstr ""
+"Produkte gefunden, aber keines benötigt auf Basis der aktuellen "
+"Einstellungen eine Preisanpassung (z. B. Marge bereits optimal)."
+
+#: templates/price-rule-preview.php:30 templates/price-rules.php:54
+msgid "Actions"
+msgstr "Aktionen"
+
+#: templates/price-rule-preview.php:104 templates/price-rule-preview.php:105
+#: templates/price-rule-preview.php:106
+msgid "Add to Exclude"
+msgstr "Zu Ausschlüssen hinzufügen"
+
+#: templates/price-rules.php:35
+msgid "No Scheduled Rules Yet"
+msgstr "Noch keine geplanten Regeln"
+
+#: templates/price-rules.php:37
+msgid ""
+"Create your first scheduled price rule to automatically adjust product "
+"prices based on conditions like margins, discounts, and more."
+msgstr ""
+"Erstellen Sie Ihre erste geplante Preisregel, um Produktpreise automatisch "
+"anhand von Bedingungen wie Margen, Rabatten und mehr anzupassen."
+
+#: templates/price-rules.php:41
+msgid "Create Your First Rule"
+msgstr "Erstellen Sie Ihre erste Regel"
+
+#: templates/price-rules.php:50
+msgid "Type"
+msgstr "Typ"
+
+#: templates/price-rules.php:53
+msgid "Last Run"
+msgstr "Letzte Ausführung"
+
+#: templates/price-rules.php:121
+msgid "ago"
+msgstr "vor"
+
+#: templates/price-rules.php:124
+msgid "Never"
+msgstr "Nie"
+
+#: templates/price-rules.php:141
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/price-rules.php:146
+msgid "Run Now"
+msgstr "Jetzt ausführen"
+
+#: templates/price-rules.php:151
+msgid "View Logs"
+msgstr "Protokolle anzeigen"
+
+#: templates/price-rules.php:156 templates/price-rules.php:221
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/price-rules.php:187
+msgid "Execution Logs"
+msgstr "Ausführungsprotokolle"
+
+#: templates/price-rules.php:208
+msgid "Delete Rule"
+msgstr "Regel löschen"
+
+#: templates/price-rules.php:213
+msgid ""
+"Are you sure you want to delete this rule? All associated logs will also be "
+"deleted. This action cannot be undone."
+msgstr ""
+"Sind Sie sicher, dass Sie diese Regel löschen möchten? Alle zugehörigen "
+"Protokolle werden ebenfalls gelöscht. Diese Aktion kann nicht rückgängig "
+"gemacht werden."
+
+#: templates/products-table.php:13
+msgid "Results"
+msgstr "Ergebnisse"
