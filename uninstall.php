@@ -3,11 +3,11 @@
  * Uninstall plugin.
  *
  * @author    Mir Mohammad Hosseini <mh@webhead.dev>
- * @copyright 2024 Webhead
+ * @copyright 2026 webhead GmbH
  */
 
 # Prevent direct file access
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 // Clean up before uninstalling this plugin
 delete_option('wh_bulk_price_update_block_size');

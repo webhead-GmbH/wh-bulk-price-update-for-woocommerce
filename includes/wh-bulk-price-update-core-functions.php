@@ -3,7 +3,7 @@
  * Bulk Price Update Core Functions
  *
  * @author    Mir Mohammad Hosseini <mh@webhead.dev>
- * @copyright 2024 Webhead
+ * @copyright 2026 webhead GmbH
  */
 
 # Prevent direct file access

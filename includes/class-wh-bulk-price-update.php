@@ -3,11 +3,11 @@
  * Bulk Price Update - Core Class
  *
  * @author    Mir Mohammad Hosseini <mh@webhead.dev>
- * @copyright 2024 Webhead
+ * @copyright 2026 webhead GmbH
  */
 
 # Prevent direct file access
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 class WH_Bulk_Price_Update
 {
@@ -27,8 +27,8 @@ class WH_Bulk_Price_Update
     {
         add_submenu_page(
             'edit.php?post_type=product',
-            __( 'Bulk Price Update', 'wh-bulk-price-update-for-woocommerce' ),
-            __( 'Bulk Price Update', 'wh-bulk-price-update-for-woocommerce' ),
+            __('Bulk Price Update', 'wh-bulk-price-update-for-woocommerce'),
+            __('Bulk Price Update', 'wh-bulk-price-update-for-woocommerce'),
             'manage_options',
             'wh-bulk-price-update-for-woocommerce',
             [$this, 'render_price_change_page']
