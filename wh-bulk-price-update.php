@@ -3,14 +3,14 @@
  * Plugin Name: Bulk Price Update for WooCommerce
  * Plugin URI: https://github.com/webhead-GmbH/wh-bulk-price-update-for-woocommerce
  * Description: Easily update WooCommerce product prices in bulk and automate recurring price changes with Scheduled Rules.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: webhead GmbH
  * Author URI: https://webhead.at
  * Text Domain: wh-bulk-price-update-for-woocommerce
  * Domain Path: /languages
  * Requires Plugins: woocommerce
  * WC requires at least: 7.1.0
- * WC tested up to: 10.5
+ * WC tested up to: 10.9
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * License: GNU General Public License v3.0
@@ -28,7 +28,7 @@ if (!function_exists('is_plugin_inactive')) include_once(ABSPATH . 'wp-admin/inc
 function webhead_bulk_price_update_setup_constants()
 {
     if (!defined('WEBHEAD_BULK_PRICE_UPDATE_VERSION'))
-        define('WEBHEAD_BULK_PRICE_UPDATE_VERSION', '2.0.0');
+        define('WEBHEAD_BULK_PRICE_UPDATE_VERSION', '2.0.1');
 
     if (!defined('WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR'))
         define('WEBHEAD_BULK_PRICE_UPDATE_PLUGIN_DIR', plugin_dir_path(__FILE__));
