@@ -2,9 +2,9 @@
 Contributors: webheadgmbh, mohammad425
 Tags: woocommerce, bulk price update, price adjustment, product management, scheduled rules
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.0.1
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,10 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 4. Settings
 
 == Changelog ==
+
+= 2.0.1 =
+* Tested with WordPress 7.0.1 and WooCommerce 10.9.
+* Fix: Prevent a fatal error during uninstall on PHP 8 caused by undefined cache-key constants.
 
 = 2.0.0 =
 * Added Scheduled Rules feature for automated rule-based price updates.
