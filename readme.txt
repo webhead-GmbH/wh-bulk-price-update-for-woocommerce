@@ -2,9 +2,9 @@
 Contributors: webheadgmbh, mohammad425
 Tags: woocommerce, bulk price update, price adjustment, product management, scheduled rules
 Requires at least: 6.0
-Tested up to: 7.0.1
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,21 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 4. Settings
 
 == Changelog ==
+
+= 2.0.2 =
+* Tested with WordPress 7.1 and WooCommerce 11.0.1.
+* Fix: Scheduled Rules with a "Once Weekly" schedule were never actually scheduled because the required WP-Cron interval was missing.
+* Fix: A Price Adjustment rule that raised a product's regular price could incorrectly delete a still-valid, unrelated sale price; the reverse case (lowering regular price below an active sale) could leave the storefront price stale instead of updating it.
+* Fix: Filtering a Scheduled Rule by two terms of the same attribute (e.g. two colors) matched zero products instead of either one.
+* Fix: The default Margin Check tiers had a gap between $200-$201 and $1,500-$1,501 where no margin was enforced at all.
+* Fix: Saving a Scheduled Rule with an ID that no longer exists reported success without actually updating anything.
+* Fix: A custom price formula built from two placeholders with no operator between them (e.g. clicking two placeholder buttons in a row) silently produced a bogus concatenated price instead of being rejected.
+* Fix: The "Clear Logs" button in Execution Logs was enabled/disabled based on the active filter instead of whether the rule had any logs at all.
+* Fix: A slow attribute/product label lookup from a previously opened rule could leak stray options into a different rule's Edit modal.
+* Fix: Various admin-ajax error responses (e.g. an expired security check) could get stuck with no feedback (disabled buttons, spinning spinners) instead of failing gracefully.
+* Fix: The "Latest Posts" and "Other Plugins" tabs could show PHP warnings or a broken layout if the remote feed returned an unexpected response.
+* Fix: PHP 8+ notices from a couple of unvalidated request fields.
+* Fix: Minor duplicate-id and Select2 cleanup issues in the admin UI.
 
 = 2.0.1 =
 * Tested with WordPress 7.0.1 and WooCommerce 10.9.

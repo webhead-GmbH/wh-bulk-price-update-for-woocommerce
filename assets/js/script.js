@@ -155,6 +155,13 @@ jQuery(document).ready(function ($) {
             return null;
         }
 
+        // Two numbers separated only by whitespace (e.g. two placeholders inserted
+        // back-to-back with no operator) would otherwise silently collapse into one
+        // bogus number once whitespace is stripped below - reject that first.
+        if (/[0-9]\s+[0-9.]/.test(resolved_expression)) {
+            return null;
+        }
+
         const compact_expression = resolved_expression.replace(/\s+/g, '').replace(/,/g, '.');
         if (!compact_expression || /[a-zA-Z_{}]/.test(compact_expression)) {
             return null;
@@ -386,7 +393,13 @@ jQuery(document).ready(function ($) {
     //--------------------------------------------------------------------------------
     //Preview prices
 
+    let price_update_in_progress = false;
+
     function do_change(is_preview = false) {
+        if (price_update_in_progress) {
+            return;
+        }
+
         if (!validate_price_value_input()) {
             return;
         }
@@ -405,6 +418,9 @@ jQuery(document).ready(function ($) {
                 _data[$(this).attr("name")] = $(this).is(":checked") ? 1 : 0;
         });
 
+        price_update_in_progress = true;
+        $("#preview-prices, #wh-do-update-price").prop("disabled", true);
+
         $.ajax({
             url: wh_script_params.ajax_url,
             type: "post",
@@ -413,8 +429,17 @@ jQuery(document).ready(function ($) {
                 $("#pp_spinner").addClass("is-active");
             },
             success: function (response) {
-                $("#pp_spinner").removeClass("is-active");
                 $("#preview-products-result").removeClass("d-none").html(response);
+            },
+            error: function () {
+                $("#preview-products-result").removeClass("d-none").html(
+                    '<div class="alert alert-danger mb-0">' + (wh_script_params.i18n_connection_error || 'Connection error.') + '</div>'
+                );
+            },
+            complete: function () {
+                $("#pp_spinner").removeClass("is-active");
+                price_update_in_progress = false;
+                $("#preview-prices, #wh-do-update-price").prop("disabled", false);
             }
         });
     }
@@ -516,8 +541,17 @@ jQuery(document).ready(function ($) {
                     success: function (response) {
                         $("#wh-plugins").html(response);
                         $("#wh-plugins-wrapper .spinner").removeClass("is-active");
+                    },
+                    error: function () {
+                        $("#wh-plugins-wrapper .spinner").removeClass("is-active");
                     }
                 });
+            },
+            error: function () {
+                // Allow a retry on the next tab click instead of leaving the tab
+                // permanently spinning with no content and no way to recover.
+                posts_loaded = false;
+                $("#wh-blog-posts-wrapper .spinner").removeClass("is-active");
             }
         });
     }

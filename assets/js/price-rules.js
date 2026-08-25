@@ -18,6 +18,22 @@ jQuery(document).ready(function ($) {
     let suppressPreviewHideUntil = 0;
     let activeLogsRuleId = 0;
     let logsRequest = null;
+    // Bumped every time the Add/Edit Rule modal is (re)populated, so a slow
+    // label-hydration request from a previously opened rule can detect it is
+    // stale and skip mutating the select that now belongs to a different rule.
+    let ruleModalSession = 0;
+
+    // A failed nonce check (or any non-JSON/error-page body) can land in a jQuery
+    // `success` callback as a bare string/number rather than the expected
+    // {success, data} object - reading `.data.message` on that throws and skips
+    // any UI cleanup that follows. Always read error messages through this helper.
+    function getAjaxErrorMessage(response, fallback) {
+        if (response && typeof response === 'object' && response.data && response.data.message) {
+            return response.data.message;
+        }
+
+        return fallback;
+    }
 
     function hidePreviewResult(clearContent = false) {
         $previewSection.addClass('d-none');
@@ -172,6 +188,15 @@ jQuery(document).ready(function ($) {
         minimumInputLength: 2,
     });
 
+    // Select2 attaches document-level listeners per instance that only its own
+    // destroy() call removes; replacing $logsContent's markup via .html() without
+    // destroying first leaks those listeners on every page/filter/reset/reopen.
+    function destroyLogsFilterSelect2() {
+        $logsContent.find('.select2-hidden-accessible').each(function () {
+            $(this).select2('destroy');
+        });
+    }
+
     function getLogsLoadingMarkup() {
         const loadingText = wh_script_params.i18n_loading_logs || 'Loading logs...';
         return `
@@ -305,6 +330,7 @@ jQuery(document).ready(function ($) {
         activeLogsRuleId = normalizedRuleId;
 
         if (showLoading) {
+            destroyLogsFilterSelect2();
             $logsContent.html(getLogsLoadingMarkup());
         }
 
@@ -317,6 +343,7 @@ jQuery(document).ready(function ($) {
             type: 'POST',
             data: getLogsRequestPayload(normalizedRuleId, page),
             success: function (response) {
+                destroyLogsFilterSelect2();
                 $logsContent.html(response);
                 initLogsFilterSelect2();
                 initializeTooltips($logsContent);
@@ -918,6 +945,8 @@ jQuery(document).ready(function ($) {
             return;
         }
 
+        const requestedSession = ruleModalSession;
+
         $.ajax({
             url: wh_script_params.ajax_url,
             type: 'POST',
@@ -928,6 +957,10 @@ jQuery(document).ready(function ($) {
                 ids: ids
             },
             success: function (response) {
+                if (requestedSession !== ruleModalSession) {
+                    return; // A different rule's modal is open now - discard this stale response.
+                }
+
                 if (!response || !response.success || !response.data || !Array.isArray(response.data.results)) {
                     return;
                 }
@@ -1035,6 +1068,7 @@ jQuery(document).ready(function ($) {
 
     // Open Add New Rule Modal
     $('#wh-add-rule-btn, .wh-add-rule-trigger').on('click', function () {
+        ruleModalSession++;
         $('#wh-rule-form-title').text('Add New Rule');
         $('#wh-rule-id').val('0');
         $ruleForm[0].reset();
@@ -1070,6 +1104,7 @@ jQuery(document).ready(function ($) {
 
     // Open Edit Rule Modal
     $('.wh-edit-rule').on('click', function () {
+        ruleModalSession++;
         resetSteps();
         hidePreviewResult(true);
         const rule = JSON.parse($(this).attr('data-rule'));
@@ -1282,10 +1317,10 @@ jQuery(document).ready(function ($) {
                 btnStatus.removeClass('d-none');
             },
             success: function (response) {
-                if (response.success) {
+                if (response && response.success) {
                     location.reload(); // Reload to refresh the list
                 } else {
-                    alert(response.data.message || 'Error saving rule.');
+                    alert(getAjaxErrorMessage(response, 'Error saving rule.'));
                     updateSaveButtonState();
                     btnIcon.removeClass('d-none');
                     btnText.removeClass('d-none');
@@ -1306,8 +1341,9 @@ jQuery(document).ready(function ($) {
 
     // Toggle Rule Status
     $('.wh-toggle-rule-status').on('change', function () {
-        const rule_id = $(this).data('rule-id');
-        const is_checked = $(this).is(':checked');
+        const $toggle = $(this);
+        const rule_id = $toggle.data('rule-id');
+        const is_checked = $toggle.is(':checked');
 
         $.ajax({
             url: wh_script_params.ajax_url,
@@ -1318,11 +1354,15 @@ jQuery(document).ready(function ($) {
                 rule_id: rule_id
             },
             success: function (response) {
-                if (!response.success) {
-                    alert(response.data.message);
-                    $(this).prop('checked', !is_checked); // Revert
+                if (!response || !response.success) {
+                    alert(getAjaxErrorMessage(response, 'Error toggling rule.'));
+                    $toggle.prop('checked', !is_checked); // Revert
                 }
-            }.bind(this)
+            },
+            error: function () {
+                alert('Connection error.');
+                $toggle.prop('checked', !is_checked); // Revert
+            }
         });
     });
 
@@ -1352,7 +1392,7 @@ jQuery(document).ready(function ($) {
                 btn.prop('disabled', true).text('Deleting...');
             },
             success: function (response) {
-                if (response.success) {
+                if (response && response.success) {
                     $('#wh-rule-row-' + deleteRuleId).fadeOut(function () {
                         $(this).remove();
                         if ($('.wh-rules-table tbody tr').length === 0) {
@@ -1361,8 +1401,12 @@ jQuery(document).ready(function ($) {
                     });
                     bootstrap.Modal.getInstance(document.getElementById('wh-confirm-delete-rule')).hide();
                 } else {
-                    alert(response.data.message || 'Error deleting rule.');
+                    alert(getAjaxErrorMessage(response, 'Error deleting rule.'));
                 }
+                btn.prop('disabled', false).html(originalText);
+            },
+            error: function () {
+                alert('Connection error.');
                 btn.prop('disabled', false).html(originalText);
             }
         });
@@ -1500,6 +1544,7 @@ jQuery(document).ready(function ($) {
         }
         logsRequest = null;
         activeLogsRuleId = 0;
+        destroyLogsFilterSelect2();
         $logsContent.html(getLogsLoadingMarkup());
     });
 

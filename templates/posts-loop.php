@@ -10,11 +10,14 @@ defined( 'ABSPATH' ) || exit;
     <?php foreach($posts as $post): ?>
         <div class="col wh-post-loop-item">
             <div class="card p-0 h-100" style="--bs-card-border-width:1px;--bs-card-border-radius:10px">
-                <a href="<?php echo esc_url( $post['link'] ); ?>" target="_blank" rel="nofollow">
-                    <img src="<?php echo esc_url( $post['_embedded']['wp:featuredmedia'][0]['source_url'] ); ?>"
-                         alt="<?php echo esc_attr( $post['_embedded']['wp:featuredmedia'][0]['alt_text'] ); ?>"
-                         class="card-img-top object-fit-cover" style="max-height:254px">
-                </a>
+                <?php $featured_media = $post['_embedded']['wp:featuredmedia'][0]['source_url'] ?? ''; ?>
+                <?php if ( $featured_media !== '' ): ?>
+                    <a href="<?php echo esc_url( $post['link'] ); ?>" target="_blank" rel="nofollow">
+                        <img src="<?php echo esc_url( $featured_media ); ?>"
+                             alt="<?php echo esc_attr( $post['_embedded']['wp:featuredmedia'][0]['alt_text'] ?? '' ); ?>"
+                             class="card-img-top object-fit-cover" style="max-height:254px">
+                    </a>
+                <?php endif; ?>
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="<?php echo esc_url( $post['link'] ); ?>" target="_blank" rel="nofollow"

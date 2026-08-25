@@ -60,6 +60,13 @@ class WH_Price_Rule_Scheduler
             ];
         }
 
+        if (! isset($schedules['weekly'])) {
+            $schedules['weekly'] = [
+                'interval' => WEEK_IN_SECONDS,
+                'display'  => __('Once Weekly', 'wh-bulk-price-update-for-woocommerce'),
+            ];
+        }
+
         return $schedules;
     }
 

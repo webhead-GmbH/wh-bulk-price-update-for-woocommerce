@@ -6,6 +6,7 @@ defined('ABSPATH') || exit;
  * @var array       $logs
  * @var object|null $rule
  * @var int         $log_count
+ * @var int         $total_log_count
  * @var int         $page
  * @var int         $per_page
  * @var int         $total_pages
@@ -28,6 +29,11 @@ $page = max(1, (int) ($page ?? 1));
 $per_page = max(1, (int) ($per_page ?? 20));
 $total_pages = max(1, (int) ($total_pages ?? 1));
 $log_count = max(0, (int) ($log_count ?? 0));
+// Falls back to the filtered count only if the caller didn't supply the unfiltered
+// total; the "Clear Logs" action always deletes ALL of a rule's logs, so its
+// disabled state must reflect whether the rule has any logs at all, not the
+// current filter's result count.
+$total_log_count = max(0, (int) ($total_log_count ?? $log_count));
 
 $from_index = $log_count > 0 ? (($page - 1) * $per_page) + 1 : 0;
 $to_index = $log_count > 0 ? min($log_count, $page * $per_page) : 0;
@@ -123,7 +129,7 @@ $to_index = $log_count > 0 ? min($log_count, $page * $per_page) : 0;
                     type="button"
                     class="btn btn-sm btn-outline-danger wh-clear-rule-logs"
                     data-rule-id="<?php echo esc_attr((string) $rule_id); ?>"
-                    <?php disabled($log_count <= 0); ?>>
+                    <?php disabled($total_log_count <= 0); ?>>
                     <i class="fa-solid fa-trash-can me-1"></i>
                     <?php esc_html_e('Clear Logs', 'wh-bulk-price-update-for-woocommerce'); ?>
                 </button>

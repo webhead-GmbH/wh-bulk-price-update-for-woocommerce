@@ -160,7 +160,6 @@ Available hooks:
 - Ajax hooks are registered twice:
   - once in `WH_Bulk_Price_Update::add_hooks()`
   - once in `WH_Bulk_Price_Update_Ajax::init()`
-- `weekly` schedule is exposed but no `weekly` interval is added in `cron_schedules`.
-- `webhead_bulk_price_update_get_language_code()` uses array indexing that effectively falls back to `en`.
-- `uninstall.php` references plugin constants that are not defined inside uninstall context.
+  - harmless: every ajax handler terminates via `wp_die()`/`wp_send_json_*`, so the
+    second registration never actually runs.
 - This package has no PHPUnit/integration test suite; rely on manual regression checks.

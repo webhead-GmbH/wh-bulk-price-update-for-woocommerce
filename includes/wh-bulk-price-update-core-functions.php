@@ -231,6 +231,14 @@ if( !function_exists( 'webhead_bulk_price_update_evaluate_math_expression' ) ) {
     function webhead_bulk_price_update_evaluate_math_expression(string $expression): ?float
     {
         $expression = str_replace( ',', '.', sanitize_text_field( $expression ) );
+
+        // Two numbers separated only by whitespace (e.g. from two placeholders inserted
+        // back-to-back with no operator) would otherwise silently collapse into one bogus
+        // number once whitespace is stripped below - reject that before stripping it.
+        if( preg_match( '/[0-9]\s+[0-9.]/', $expression ) ) {
+            return null;
+        }
+
         $expression = preg_replace( '/\s+/', '', $expression );
 
         if( $expression === '' || !preg_match( '/^[0-9+\-*\/().]+$/', $expression ) ) {
@@ -485,7 +493,7 @@ if( !function_exists( 'webhead_bulk_price_update_get_language_code' ) ) {
 
         // Validate language code
         $available_languages = ['en', 'de'];
-        return $available_languages[$lang] ?? 'en';
+        return in_array($lang, $available_languages, true) ? $lang : 'en';
     }
 }
 
@@ -523,7 +531,16 @@ if( !function_exists( 'webhead_bulk_price_update_get_blog_posts' ) ) {
             if( is_wp_error( $response ) )
                 return [];
 
+            if( (int) wp_remote_retrieve_response_code( $response ) !== 200 )
+                return [];
+
             $posts = json_decode( wp_remote_retrieve_body( $response ), true );
+
+            // The endpoint is expected to return a plain list of post objects; anything
+            // else (e.g. a REST error payload, which decodes to an associative array of
+            // strings) is not safe to render or cache.
+            if( ! is_array( $posts ) || ( ! empty( $posts ) && ! is_array( reset( $posts ) ) ) )
+                return [];
 
             // Cache blog posts for 24 hours
             set_transient( WEBHEAD_BULK_PRICE_UPDATE_BLOG_POST_CACHE_KEY . "_{$lang}", $posts, DAY_IN_SECONDS );
@@ -556,7 +573,15 @@ if( !function_exists( 'webhead_bulk_price_update_get_plugins' ) ) {
             if( is_wp_error( $response ) )
                 return [];
 
+            if( (int) wp_remote_retrieve_response_code( $response ) !== 200 )
+                return [];
+
             $plugins = json_decode( wp_remote_retrieve_body( $response ), true );
+
+            // The endpoint is expected to return a plain list of plugin objects; anything
+            // else (e.g. an error payload) is not safe to render or cache.
+            if( ! is_array( $plugins ) || ( ! empty( $plugins ) && ! is_array( reset( $plugins ) ) ) )
+                return [];
 
             // Cache plugins list for 24 hours
             set_transient( WEBHEAD_BULK_PRICE_UPDATE_PLUGINS_CACHE_KEY, $plugins, DAY_IN_SECONDS );

@@ -316,7 +316,7 @@ defined('ABSPATH') || exit;
                                         <?php foreach ($attributes as $attr): ?>
                                             <div class="mb-3">
                                                 <label class="form-label d-block"
-                                                    for="<?php echo esc_attr($attr->attribute_name); ?>">
+                                                    for="wh-attr-<?php echo esc_attr($attr->attribute_name); ?>">
                                                     <?php echo sprintf(
                                                         /* translators: %s: Attribute label. */
                                                         wp_kses(__('Products in <b>%s</b> attribute', 'wh-bulk-price-update-for-woocommerce'), ['b' => []]),
@@ -324,7 +324,7 @@ defined('ABSPATH') || exit;
                                                     ); ?>
                                                 </label>
                                                 <select class="form-select wh-select2" multiple
-                                                    id="<?php echo esc_attr($attr->attribute_name); ?>"
+                                                    id="wh-attr-<?php echo esc_attr($attr->attribute_name); ?>"
                                                     name="<?php echo esc_attr(wc_attribute_taxonomy_name($attr->attribute_name)); ?>">
                                                     <?php
                                                     $attr_terms = get_terms(wc_attribute_taxonomy_name($attr->attribute_name));

@@ -52,7 +52,7 @@ defined( 'ABSPATH' ) || exit;
                                     </td>
                                     <td>
                                         <span class="text-success">
-                                            <?php echo wp_kses( $product['change_prices'][$price_type], ['span' => ['class'], 'bdi'] ); ?>
+                                            <?php echo wp_kses( $product['change_prices'][$price_type] ?? '', ['span' => ['class'], 'bdi'] ); ?>
                                         </span>
                                     </td>
                                 </tr>

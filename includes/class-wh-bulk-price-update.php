@@ -162,6 +162,7 @@ class WH_Bulk_Price_Update
                 'i18n_clearing'                => __('Clearing...', 'wh-bulk-price-update-for-woocommerce'),
                 'i18n_loading_logs'            => __('Loading logs...', 'wh-bulk-price-update-for-woocommerce'),
                 'i18n_excluded'                => __('Excluded', 'wh-bulk-price-update-for-woocommerce'),
+                'i18n_connection_error'        => __('Connection error.', 'wh-bulk-price-update-for-woocommerce'),
                 'ajax_url'                     => admin_url('admin-ajax.php'),
                 'update_product_price_nonce'   => wp_create_nonce('update-product-price'),
                 'save_settings_nonce'          => wp_create_nonce('save-settings'),

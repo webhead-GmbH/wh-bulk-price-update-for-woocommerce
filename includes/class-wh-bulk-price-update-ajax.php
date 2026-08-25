@@ -61,7 +61,7 @@ class WH_Bulk_Price_Update_Ajax
         if ($price_value_raw === '')
             wp_die();
 
-        $is_preview = (bool)$_POST['is_preview'];
+        $is_preview = (bool)($_POST['is_preview'] ?? false);
         $result = [];
         $offset = 0;
         $updated_count = 0;
@@ -91,10 +91,10 @@ class WH_Bulk_Price_Update_Ajax
             wp_die();
         }
 
-        $include_products = array_map('intval', (array)$_POST['include_products']);
-        $exclude_products = array_map('intval', (array)$_POST['exclude_products']);
-        $categories = array_map('intval', (array)$_POST['categories']);
-        $tags = array_map('intval', (array)$_POST['tags']);
+        $include_products = array_map('intval', (array)($_POST['include_products'] ?? []));
+        $exclude_products = array_map('intval', (array)($_POST['exclude_products'] ?? []));
+        $categories = array_map('intval', (array)($_POST['categories'] ?? []));
+        $tags = array_map('intval', (array)($_POST['tags'] ?? []));
 
         // Set preview caption if in preview mode
         if ($is_preview)
@@ -171,7 +171,7 @@ class WH_Bulk_Price_Update_Ajax
             // Process each product in the current batch
             foreach ($loop->posts as $product_id) {
                 // Apply product exclusion if selected
-                if ($_POST['has_exclude_products'] == 1 && !empty($exclude_products) && in_array($product_id, $exclude_products))
+                if (($_POST['has_exclude_products'] ?? 0) == 1 && !empty($exclude_products) && in_array($product_id, $exclude_products))
                     continue;
 
                 // Getting all product IDs (including variations for variable products)
@@ -436,6 +436,10 @@ class WH_Bulk_Price_Update_Ajax
 
         if ($rule_id > 0) {
             // Update existing rule
+            if (! WH_Price_Rule_DB::get($rule_id)) {
+                wp_send_json_error(['message' => __('Rule not found.', 'wh-bulk-price-update-for-woocommerce')]);
+            }
+
             $result = WH_Price_Rule_DB::update($rule_id, $data);
 
             if ($result) {
@@ -613,6 +617,7 @@ class WH_Bulk_Price_Update_Ajax
         $filters  = self::get_logs_filters_from_request();
 
         $log_count = WH_Price_Rule_Log_DB::count_by_rule_filtered($rule_id, $filters);
+        $total_log_count = WH_Price_Rule_Log_DB::count_by_rule($rule_id);
         $total_pages = max(1, (int) ceil($log_count / $per_page));
         $page = min($page, $total_pages);
         $offset = ($page - 1) * $per_page;
@@ -626,6 +631,7 @@ class WH_Bulk_Price_Update_Ajax
             'logs'                => $logs,
             'rule'                => $rule,
             'log_count'           => $log_count,
+            'total_log_count'     => $total_log_count,
             'page'                => $page,
             'per_page'            => $per_page,
             'total_pages'         => $total_pages,

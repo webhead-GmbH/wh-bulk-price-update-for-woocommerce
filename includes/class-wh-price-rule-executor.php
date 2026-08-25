@@ -199,18 +199,27 @@ class WH_Price_Rule_Executor
         }
 
         if (!empty($rule_attributes)) {
-            // Frontend sends an array of term IDs
+            // Frontend sends a flat array of term IDs, possibly spanning multiple
+            // attribute taxonomies. Group by taxonomy first so terms of the same
+            // attribute (e.g. two colors) are OR'd together, while different
+            // attributes are still AND'd against each other.
             $attribute_terms = array_map('intval', $rule_attributes);
+            $attribute_terms_by_taxonomy = [];
+
             foreach ($attribute_terms as $term_id) {
                 $term = get_term($term_id);
                 if ($term && !is_wp_error($term)) {
-                    $tax_query[] = [
-                        'taxonomy' => $term->taxonomy,
-                        'field'    => 'term_id',
-                        'terms'    => [$term_id],
-                        'operator' => 'IN',
-                    ];
+                    $attribute_terms_by_taxonomy[$term->taxonomy][] = $term_id;
                 }
+            }
+
+            foreach ($attribute_terms_by_taxonomy as $taxonomy => $term_ids) {
+                $tax_query[] = [
+                    'taxonomy' => $taxonomy,
+                    'field'    => 'term_id',
+                    'terms'    => $term_ids,
+                    'operator' => 'IN',
+                ];
             }
         }
 
@@ -470,7 +479,8 @@ class WH_Price_Rule_Executor
 
         if ($price_field === '_regular_price') {
             $current_sale_price = (float) $product->get_sale_price();
-            if (!empty($current_sale_price) && $current_sale_price < $new_price) {
+            // A sale price is only valid while it stays strictly below the regular price.
+            if (!empty($current_sale_price) && $current_sale_price >= $new_price) {
                 $sale_will_be_removed = true;
                 $old_sale_price = $current_sale_price;
             }
@@ -523,16 +533,18 @@ class WH_Price_Rule_Executor
                 update_post_meta($product_id, '_price', $new_price);
             }
         } elseif ($price_field === '_regular_price') {
-            // If the regular price was pushed up, any existing sale price is now invalid (brings price below margin).
-            // We ensure it gets removed.
-            $sale_price = (float) $product->get_sale_price();
-            if (!empty($sale_price)) {
-                if ($sale_price < (float) $new_price) {
-                    delete_post_meta($product_id, '_sale_price');
+            // Each evaluate_* method already determines (in its own rule-specific terms,
+            // e.g. margin floor vs. plain regular/sale comparison) whether the existing
+            // sale price is no longer valid against the new regular price.
+            if (!empty($adjustment['sale_will_be_removed'])) {
+                delete_post_meta($product_id, '_sale_price');
+                update_post_meta($product_id, '_price', $new_price);
+            } else {
+                $sale_price = (float) $product->get_sale_price();
+                if (empty($sale_price)) {
                     update_post_meta($product_id, '_price', $new_price);
                 }
-            } else {
-                update_post_meta($product_id, '_price', $new_price);
+                // Else: the existing sale price is still valid and remains the active price.
             }
         }
 
@@ -668,8 +680,8 @@ class WH_Price_Rule_Executor
     {
         return [
             ['min_cog' => 0,    'max_cog' => 200,  'margin_pct' => 60],
-            ['min_cog' => 201,  'max_cog' => 1500, 'margin_pct' => 50],
-            ['min_cog' => 1501, 'max_cog' => 0,    'margin_pct' => 45],
+            ['min_cog' => 200,  'max_cog' => 1500, 'margin_pct' => 50],
+            ['min_cog' => 1500, 'max_cog' => 0,    'margin_pct' => 45],
         ];
     }
 
