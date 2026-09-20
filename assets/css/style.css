@@ -294,6 +294,26 @@
     margin-top: 0;
 }
 
+/*
+ * WordPress core styles `input[type="checkbox"]:checked` with a `background`
+ * shorthand (admin theme color, no image), which out-specifies Bootstrap's switch
+ * rules and wipes the knob - a checked switch turned into a solid blue pill.
+ * Restore the knob and use the plugin accent color instead of the admin theme color.
+ */
+.wh-dashboard .form-switch .form-check-input:checked,
+.wh-dashboard .form-switch .form-check-input:checked:focus {
+    background-color: #319B80;
+    border-color: #319B80;
+    background-image: var(--bs-form-switch-bg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+}
+
+.wh-dashboard .form-switch .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(49, 155, 128, 0.25);
+}
+
 .wh-price-input-group {
     display: grid !important;
     grid-template-columns: 130px 1fr 130px;
@@ -455,5 +475,54 @@
 
     .wh-settings-tab .nav-pills .nav-link.active {
         border-radius: 10px !important;
+    }
+}
+
+/*
+ * Modals: keep them clear of the WordPress admin bar (top) and admin menu (left).
+ * Bootstrap centers a modal against the whole viewport, but the fixed admin menu and
+ * admin bar are painted above it, so wide modals slid under the menu and every modal
+ * sat flush against (or beneath) the top bar.
+ */
+html.wp-toolbar {
+    --wh-adminbar-height: 32px;
+}
+
+body.wp-admin {
+    --wh-adminmenu-width: 160px;
+}
+
+body.wp-admin.folded {
+    --wh-adminmenu-width: 36px;
+}
+
+@media (max-width: 960px) {
+    body.wp-admin.auto-fold {
+        --wh-adminmenu-width: 36px;
+    }
+}
+
+@media (max-width: 782px) {
+    html.wp-toolbar {
+        --wh-adminbar-height: 46px;
+    }
+
+    body.wp-admin,
+    body.wp-admin.folded,
+    body.wp-admin.auto-fold {
+        --wh-adminmenu-width: 0px;
+    }
+}
+
+body.wp-admin .modal {
+    top: var(--wh-adminbar-height, 0px);
+    left: var(--wh-adminmenu-width, 0px);
+    width: calc(100% - var(--wh-adminmenu-width, 0px));
+    height: calc(100% - var(--wh-adminbar-height, 0px));
+}
+
+@media (min-width: 576px) {
+    body.wp-admin .modal {
+        --bs-modal-margin: 2rem;
     }
 }

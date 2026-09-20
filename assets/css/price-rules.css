@@ -88,7 +88,7 @@
 }
 
 #wh-rule-form-modal .modal-dialog {
-    max-width: min(1080px, calc(100vw - 64px));
+    max-width: min(1080px, calc(100vw - var(--wh-adminmenu-width, 0px) - 64px));
 }
 
 #wh-rule-form-modal .modal-body {
@@ -256,7 +256,7 @@
 
 /* Execution logs modal */
 #wh-rule-logs-modal .modal-dialog {
-    max-width: min(1320px, calc(100vw - 48px));
+    max-width: min(1320px, calc(100vw - var(--wh-adminmenu-width, 0px) - 48px));
 }
 
 .wh-logs-filter-form {

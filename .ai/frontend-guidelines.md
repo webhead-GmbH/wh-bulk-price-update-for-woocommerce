@@ -106,6 +106,14 @@ When adding an ajax feature, update both:
 - Keep Bootstrap utility usage; avoid rewriting layout primitives.
 - Sidebar/header behavior is JS-assisted (`sticky` + width sync).
 - Keep mobile behavior in mind (special rules at `max-width: 767px`).
+- The page runs inside wp-admin, so WordPress core's admin CSS competes with Bootstrap:
+  - Core styles `input[type="checkbox"]:checked` with a `background` shorthand, which erases
+    Bootstrap's switch knob. The `.wh-dashboard .form-switch .form-check-input:checked` rule in
+    `style.css` restores it - keep it when touching switches.
+  - Bootstrap modals are `position: fixed` against the whole viewport, but the fixed admin menu
+    and admin bar paint above them. `style.css` offsets `.modal` by `--wh-adminbar-height` /
+    `--wh-adminmenu-width` (folded menu and <=782px handled). Any new modal width calculation
+    should subtract `--wh-adminmenu-width`.
 
 ## Editing boundaries
 
@@ -127,6 +135,8 @@ When adding an ajax feature, update both:
 7. Open logs modal and confirm rows render.
 8. Open About tab and verify posts/plugins are loaded via ajax.
 9. Verify step validation blocks navigation when required fields are invalid.
+10. Verify status switches show a knob in both states, and that every modal clears the admin bar and
+    admin menu (also with the menu collapsed and at mobile width).
 10. Verify Preview is visible only on step 4 and hides when navigating to earlier steps.
 11. Verify include+exclude filters keep excluded IDs out of effective selection.
 12. Verify edit mode rehydrates attributes/include/exclude selections correctly.

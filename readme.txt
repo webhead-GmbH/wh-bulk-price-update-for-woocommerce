@@ -95,7 +95,9 @@ No, all features of this plugin are fully accessible for free. There is no pro v
 == Changelog ==
 
 = 2.0.2 =
-* Tested with WordPress 7.1 and WooCommerce 11.0.1.
+* Tested with WordPress 7.1.1 and WooCommerce 11.1.1.
+* Fix: Enabled status switches in Scheduled Rules rendered as a solid blue pill without a knob because WordPress core's admin checkbox styles overrode the switch styling.
+* Fix: Modals (Execution Logs, Add/Edit Rule, confirmations) could slide under the WordPress admin menu and sat flush against the admin bar; they are now positioned clear of both, including with a collapsed menu and on mobile.
 * Fix: Scheduled Rules with a "Once Weekly" schedule were never actually scheduled because the required WP-Cron interval was missing.
 * Fix: A Price Adjustment rule that raised a product's regular price could incorrectly delete a still-valid, unrelated sale price; the reverse case (lowering regular price below an active sale) could leave the storefront price stale instead of updating it.
 * Fix: Filtering a Scheduled Rule by two terms of the same attribute (e.g. two colors) matched zero products instead of either one.
